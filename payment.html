@@ -1,9 +1,9 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 
 <!-- ===================================================== -->
 <!-- ♠ DJ SPADE                                           -->
 <!-- FREDSGIVING RAVE TICKETING                           -->
-<!-- Website / Ticket System by Gerardo Camacho           -->
+<!-- Ticket System by Gerardo Camacho                     -->
 <!-- ===================================================== -->
 
 <html lang="en">
@@ -22,6 +22,11 @@
         content="Gerardo Camacho / DJ Spade"
     >
 
+    <meta
+        name="description"
+        content="Fredsgiving Rave presale ticket payment page."
+    >
+
     <title>
         Fredsgiving Rave Tickets
     </title>
@@ -33,12 +38,15 @@
 
 </head>
 
+
 <body class="payment-body">
+
 
     <main class="payment-page">
 
+
         <!-- ================================================= -->
-        <!-- ♠ PAYMENT TOP BAR                                 -->
+        <!-- ♠ TOP BAR                                         -->
         <!-- ================================================= -->
 
         <div class="payment-topbar">
@@ -50,29 +58,36 @@
                 ← BACK TO EVENT
             </a>
 
+
             <span>
                 ♠ COURTLAND
             </span>
 
         </div>
 
+
+
         <!-- ================================================= -->
-        <!-- ♠ PRESALE TICKETING                               -->
+        <!-- ♠ PRESALE TICKETS                                 -->
         <!-- ================================================= -->
 
         <section class="payment-panel">
+
 
             <p class="presented-by">
                 ♠ FREDSGIVING RAVE
             </p>
 
+
             <h1 class="payment-title">
                 PRESALE TICKETS
             </h1>
 
+
             <p class="payment-price">
                 $5
             </p>
+
 
             <p class="payment-description">
 
@@ -85,14 +100,24 @@
 
             </p>
 
+
+
+            <!-- ================================================= -->
+            <!-- ♠ TICKET FORM                                      -->
+            <!-- ================================================= -->
+
             <form
                 id="ticketForm"
                 class="ticket-form payment-form"
             >
 
+
                 <label for="ticketEmail">
+
                     EMAIL FOR YOUR TICKET
+
                 </label>
+
 
                 <input
                     type="email"
@@ -103,9 +128,14 @@
                     required
                 >
 
+
+
                 <label for="paymentMethod">
+
                     PAYMENT METHOD
+
                 </label>
+
 
                 <select
                     id="paymentMethod"
@@ -131,9 +161,14 @@
 
                 </select>
 
+
+
                 <label for="paymentName">
+
                     NAME / USERNAME YOU WILL PAY WITH
+
                 </label>
+
 
                 <input
                     type="text"
@@ -143,23 +178,31 @@
                     required
                 >
 
+
+
                 <button
                     type="submit"
                     class="request-ticket-button"
                     id="createCodeButton"
                 >
+
                     CREATE PAYMENT CODE
+
                 </button>
 
             </form>
+
+
 
             <p
                 class="ticket-message"
                 id="ticketMessage"
             ></p>
 
+
+
             <!-- ================================================= -->
-            <!-- ♠ UNIQUE PAYMENT REFERENCE                       -->
+            <!-- ♠ PAYMENT REFERENCE                               -->
             <!-- ================================================= -->
 
             <div
@@ -167,43 +210,69 @@
                 id="paymentReferenceBox"
             >
 
+
                 <p class="reference-label">
+
                     ♠ YOUR PAYMENT CODE
+
                 </p>
+
 
                 <p
                     class="reference-code"
                     id="paymentReference"
                 >
+
                     FRED-PAY-XXXXXX
+
                 </p>
+
+
 
                 <button
                     type="button"
                     class="copy-reference-button"
                     id="copyReferenceButton"
                 >
+
                     COPY CODE
+
                 </button>
 
+
+
                 <p class="reference-instructions">
+
                     Put this exact code in the
                     payment note/message.
+
                 </p>
 
+
+
                 <p class="reference-warning">
+
                     Your ticket will not be sent until
                     your payment has been verified.
+
                 </p>
+
+
+
+                <!-- ================================================= -->
+                <!-- ♠ PAYMENT BUTTON                                  -->
+                <!-- ================================================= -->
 
                 <div
                     class="selected-payment-area"
                     id="selectedPaymentArea"
                 >
 
+
                     <p>
                         Now send your $5 payment:
                     </p>
+
 
                     <a
                         href="#"
@@ -212,14 +281,21 @@
                         class="payment-option"
                         id="selectedPaymentButton"
                     >
+
                         CONTINUE TO PAYMENT
+
                     </a>
+
 
                 </div>
 
+
             </div>
 
+
         </section>
+
+
 
         <!-- ================================================= -->
         <!-- ♠ HOW IT WORKS                                    -->
@@ -227,35 +303,45 @@
 
         <section class="payment-help-card">
 
+
             <h2>
                 HOW IT WORKS
             </h2>
+
 
             <p>
                 1. Create your payment code.
             </p>
 
+
             <p>
                 2. Copy the code.
             </p>
+
 
             <p>
                 3. Send $5 using your selected payment app.
             </p>
 
+
             <p>
                 4. Put the code in the payment note.
             </p>
+
 
             <p>
                 5. Courtland verifies the payment.
             </p>
 
+
             <p>
                 6. Your QR ticket is emailed automatically.
             </p>
 
+
         </section>
+
+
 
         <!-- ================================================= -->
         <!-- ♠ FOOTER                                          -->
@@ -273,9 +359,17 @@
 
         </footer>
 
+
     </main>
 
-    <script src="script.js"></script>
+
+
+    <!-- ================================================= -->
+    <!-- ♠ SCRIPT                                           -->
+    <!-- v=2 forces browser to load newest JavaScript      -->
+    <!-- ================================================= -->
+
+    <script src="script.js?v=2"></script>
 
 </body>
 
