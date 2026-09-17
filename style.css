@@ -1406,6 +1406,73 @@ button:hover,
 }
 
 
+
+/* ===================================================== */
+/* ♠ NO REFUND POLICY                                    */
+/* ===================================================== */
+
+.refund-policy {
+
+    margin-top:
+        18px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid #ff2bd6;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(
+            255,
+            43,
+            214,
+            0.06
+        );
+
+    text-align:
+        center;
+
+}
+
+
+.refund-policy strong {
+
+    display:
+        block;
+
+    color:
+        #ff2bd6;
+
+    font-size:
+        0.9rem;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.refund-policy p {
+
+    color:
+        #cfcfcf;
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.5;
+
+}
+
+
 .request-ticket-button {
 
     width:
@@ -1415,7 +1482,6 @@ button:hover,
         20px;
 
 }
-
 
 
 /* ===================================================== */
@@ -1634,6 +1700,29 @@ button:hover,
 
     line-height:
         1.5;
+
+}
+
+
+.help-refund-warning {
+
+    margin-top:
+        20px !important;
+
+    padding-top:
+        18px;
+
+    border-top:
+        1px solid #333;
+
+    color:
+        #ff2bd6 !important;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1px;
 
 }
 
@@ -1914,6 +2003,33 @@ button:hover,
     }
 
 
+    .refund-policy {
+
+        padding:
+            16px 14px;
+
+    }
+
+
+    .refund-policy strong {
+
+        font-size:
+            0.82rem;
+
+        letter-spacing:
+            1.5px;
+
+    }
+
+
+    .refund-policy p {
+
+        font-size:
+            0.82rem;
+
+    }
+
+
     .reference-code {
 
         font-size:
@@ -1933,6 +2049,7 @@ button:hover,
     }
 
 }
+
 
 
 /* ===================================================== */
