@@ -5,25 +5,15 @@
 // Built by Gerardo Camacho
 // =====================================================
 
-
-// ♠ Hidden developer signature
-
 console.log(`
-♠ ♠ ♠ ♠ ♠ ♠ ♠ ♠ ♠ ♠
-
-      ♠ DJ SPADE ♠
-
-    FREDSGIVING RAVE
-
- Website by Gerardo Camacho
-
-♠ ♠ ♠ ♠ ♠ ♠ ♠ ♠ ♠ ♠
+♠ FREDSGIVING RAVE ♠
+Website by Gerardo Camacho / DJ Spade
 `);
 
 
 
 // =====================================================
-// ♠ GOOGLE APPS SCRIPT API
+// ♠ NEW GOOGLE APPS SCRIPT BACKEND
 // =====================================================
 
 const TICKET_API =
@@ -55,21 +45,13 @@ const PAYMENT_LINKS = {
 // =====================================================
 
 const menuButton =
-    document.getElementById(
-        "menuButton"
-    );
-
+    document.getElementById("menuButton");
 
 const closeMenu =
-    document.getElementById(
-        "closeMenu"
-    );
-
+    document.getElementById("closeMenu");
 
 const mobileMenu =
-    document.getElementById(
-        "mobileMenu"
-    );
+    document.getElementById("mobileMenu");
 
 
 if (
@@ -82,9 +64,7 @@ if (
         "click",
         function () {
 
-            mobileMenu
-                .classList
-                .add("active");
+            mobileMenu.classList.add("active");
 
             document.body.style.overflow =
                 "hidden";
@@ -97,9 +77,7 @@ if (
         "click",
         function () {
 
-            mobileMenu
-                .classList
-                .remove("active");
+            mobileMenu.classList.remove("active");
 
             document.body.style.overflow =
                 "";
@@ -137,17 +115,13 @@ if (
 
 
 // =====================================================
-// ♠ PAYMENT REFERENCE GENERATOR
-//
-// Example:
-// FRED-PAY-8Z7YXL
+// ♠ PAYMENT CODE GENERATOR
 // =====================================================
 
 function createPaymentReference() {
 
     const characters =
         "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-
 
     let code = "";
 
@@ -158,16 +132,15 @@ function createPaymentReference() {
         i++
     ) {
 
+        const randomIndex =
+            Math.floor(
+                Math.random() *
+                characters.length
+            );
+
         code +=
             characters.charAt(
-
-                Math.floor(
-
-                    Math.random() *
-                    characters.length
-
-                )
-
+                randomIndex
             );
 
     }
@@ -180,7 +153,7 @@ function createPaymentReference() {
 
 
 // =====================================================
-// ♠ TICKET REQUEST FORM
+// ♠ PAYMENT PAGE ELEMENTS
 // =====================================================
 
 const ticketForm =
@@ -188,30 +161,25 @@ const ticketForm =
         "ticketForm"
     );
 
-
 const ticketMessage =
     document.getElementById(
         "ticketMessage"
     );
-
 
 const paymentReferenceBox =
     document.getElementById(
         "paymentReferenceBox"
     );
 
-
 const paymentReferenceText =
     document.getElementById(
         "paymentReference"
     );
 
-
 const selectedPaymentButton =
     document.getElementById(
         "selectedPaymentButton"
     );
-
 
 const createCodeButton =
     document.getElementById(
@@ -220,10 +188,11 @@ const createCodeButton =
 
 
 
-if (
-    ticketForm &&
-    ticketMessage
-) {
+// =====================================================
+// ♠ SUBMIT TICKET REQUEST
+// =====================================================
+
+if (ticketForm) {
 
     ticketForm.addEventListener(
         "submit",
@@ -232,10 +201,9 @@ if (
             event.preventDefault();
 
 
-
-            // =========================================
-            // GET FORM INFORMATION
-            // =========================================
+            // -----------------------------------------
+            // Get buyer information
+            // -----------------------------------------
 
             const email =
                 document
@@ -246,14 +214,12 @@ if (
                     .trim();
 
 
-
             const paymentMethod =
                 document
                     .getElementById(
                         "paymentMethod"
                     )
                     .value;
-
 
 
             const paymentName =
@@ -265,6 +231,10 @@ if (
                     .trim();
 
 
+
+            // -----------------------------------------
+            // Validate fields
+            // -----------------------------------------
 
             if (
                 !email ||
@@ -281,9 +251,9 @@ if (
 
 
 
-            // =========================================
-            // ♠ CREATE UNIQUE PAYMENT CODE
-            // =========================================
+            // -----------------------------------------
+            // Generate payment reference
+            // -----------------------------------------
 
             const paymentReference =
                 createPaymentReference();
@@ -303,11 +273,26 @@ if (
 
 
 
+            console.log(
+                "♠ Sending ticket request:",
+                {
+                    email,
+                    paymentMethod,
+                    paymentName,
+                    paymentReference
+                }
+            );
+
+
+
             try {
 
 
                 // =====================================
-                // ♠ SEND REQUEST TO GOOGLE SHEET
+                // ♠ SEND TO APPS SCRIPT
+                //
+                // This matches the browser test
+                // that successfully wrote to Sheets.
                 // =====================================
 
                 await fetch(
@@ -349,8 +334,15 @@ if (
 
 
 
+                console.log(
+                    "♠ POST request completed:",
+                    paymentReference
+                );
+
+
+
                 // =====================================
-                // ♠ SHOW PAYMENT REFERENCE
+                // Show customer's payment code
                 // =====================================
 
                 paymentReferenceText.textContent =
@@ -359,14 +351,12 @@ if (
 
                 paymentReferenceBox
                     .classList
-                    .remove(
-                        "hidden"
-                    );
+                    .remove("hidden");
 
 
 
                 // =====================================
-                // ♠ SET PAYMENT BUTTON
+                // Payment app button
                 // =====================================
 
                 selectedPaymentButton.href =
@@ -387,8 +377,8 @@ if (
 
 
                 // =====================================
-                // ♠ LOCK FORM
-                // Prevent accidental duplicate requests
+                // Lock the information so the customer
+                // can't accidentally create duplicates.
                 // =====================================
 
                 ticketForm
@@ -411,7 +401,7 @@ if (
 
 
                 // =====================================
-                // ♠ SCROLL TO PAYMENT CODE
+                // Scroll to payment code
                 // =====================================
 
                 paymentReferenceBox
@@ -426,18 +416,11 @@ if (
                     });
 
 
-
-                console.log(
-                    "♠ DJ Spade ticket request created:",
-                    paymentReference
-                );
-
-
             } catch (error) {
 
 
                 console.error(
-                    "♠ Fredsgiving ticket error:",
+                    "♠ Ticket request failed:",
                     error
                 );
 
@@ -463,7 +446,7 @@ if (
 
 
 // =====================================================
-// ♠ COPY PAYMENT REFERENCE
+// ♠ COPY PAYMENT CODE
 // =====================================================
 
 const copyReferenceButton =
@@ -513,17 +496,11 @@ if (
                 );
 
 
-                console.log(
-                    "♠ Payment reference copied:",
-                    code
-                );
-
-
             } catch (error) {
 
 
                 console.error(
-                    "♠ Clipboard error:",
+                    "♠ Copy failed:",
                     error
                 );
 
