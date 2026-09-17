@@ -6,7 +6,7 @@
 // =====================================================
 
 
-// ♠ Hidden developer signature for anyone opening DevTools.
+// ♠ Hidden developer signature
 
 console.log(`
 ♠ ♠ ♠ ♠ ♠ ♠ ♠ ♠ ♠ ♠
@@ -27,7 +27,7 @@ console.log(`
 // =====================================================
 
 const TICKET_API =
-    "https://script.google.com/macros/s/AKfycbwDpGGxsE8a-VVp0xFCg1mf5zmDHnj5RVdHTyNm5-YnzjeZJi2NP6rEjoHWYGVl2dhk/exec";
+    "https://script.google.com/macros/s/AKfycby8XSX7NDmj5cqp88KdISQqV7T4mLAvdcIub3oYyNeV-VFRtq5oIysVGBjePofnwvMd/exec";
 
 
 
@@ -86,7 +86,6 @@ if (
                 .classList
                 .add("active");
 
-
             document.body.style.overflow =
                 "hidden";
 
@@ -101,7 +100,6 @@ if (
             mobileMenu
                 .classList
                 .remove("active");
-
 
             document.body.style.overflow =
                 "";
@@ -125,7 +123,6 @@ if (
                             .classList
                             .remove("active");
 
-
                         document.body.style.overflow =
                             "";
 
@@ -143,11 +140,10 @@ if (
 // ♠ PAYMENT REFERENCE GENERATOR
 //
 // Example:
-// FRED-PAY-7K4M2Q
+// FRED-PAY-8Z7YXL
 // =====================================================
 
 function createPaymentReference() {
-
 
     const characters =
         "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -233,7 +229,6 @@ if (
         "submit",
         async function (event) {
 
-
             event.preventDefault();
 
 
@@ -279,7 +274,6 @@ if (
 
                 ticketMessage.textContent =
                     "Please complete all fields.";
-
 
                 return;
 
@@ -332,7 +326,6 @@ if (
                                 "text/plain;charset=utf-8"
 
                         },
-
 
                         body:
                             JSON.stringify({
@@ -417,7 +410,9 @@ if (
 
 
 
-                // ♠ Scroll directly to payment code.
+                // =====================================
+                // ♠ SCROLL TO PAYMENT CODE
+                // =====================================
 
                 paymentReferenceBox
                     .scrollIntoView({
@@ -431,8 +426,6 @@ if (
                     });
 
 
-
-                // ♠ Developer log.
 
                 console.log(
                     "♠ DJ Spade ticket request created:",
