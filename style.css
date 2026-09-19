@@ -23,9 +23,11 @@ html {
 
 body {
 
-    background-color: #050505;
+    background-color:
+        #050505;
 
-    color: white;
+    color:
+        white;
 
     font-family:
         Arial,
@@ -35,13 +37,18 @@ body {
 
 
 a {
+
     -webkit-tap-highlight-color:
         transparent;
+
 }
 
 
 .hidden {
-    display: none !important;
+
+    display:
+        none !important;
+
 }
 
 
@@ -52,14 +59,20 @@ a {
 
 .navbar {
 
-    position: fixed;
+    position:
+        fixed;
 
-    top: 0;
-    left: 0;
+    top:
+        0;
 
-    width: 100%;
+    left:
+        0;
 
-    display: flex;
+    width:
+        100%;
+
+    display:
+        flex;
 
     justify-content:
         space-between;
@@ -70,7 +83,8 @@ a {
     padding:
         25px 50px;
 
-    z-index: 1000;
+    z-index:
+        1000;
 
     background-color:
         rgba(
@@ -88,11 +102,14 @@ a {
 
 .nav-logo {
 
-    color: white;
+    color:
+        white;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 
     letter-spacing:
         4px;
@@ -102,18 +119,22 @@ a {
 
 .nav-links {
 
-    display: flex;
+    display:
+        flex;
 
-    gap: 30px;
+    gap:
+        30px;
 
 }
 
 
 .nav-links a {
 
-    color: white;
+    color:
+        white;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
     font-size:
         0.9rem;
@@ -128,7 +149,10 @@ a {
 
 
 .nav-links a:hover {
-    color: #00d9ff;
+
+    color:
+        #00d9ff;
+
 }
 
 
@@ -139,11 +163,14 @@ a {
 
 .menu-button {
 
-    display: none;
+    display:
+        none;
 
-    margin: 0;
+    margin:
+        0;
 
-    padding: 0;
+    padding:
+        0;
 
     background:
         transparent;
@@ -688,6 +715,9 @@ button:hover,
     justify-content:
         center;
 
+    align-items:
+        stretch;
+
     flex-wrap:
         wrap;
 
@@ -711,33 +741,151 @@ button:hover,
     background-color:
         #0c0c0c;
 
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
 }
 
+
+.lineup-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        #ff2bd6;
+
+    box-shadow:
+        0 0 25px
+        rgba(
+            255,
+            43,
+            214,
+            0.15
+        );
+
+}
+
+
+
+/* ===================================================== */
+/* ♠ ARTIST IMAGE WRAPPER                                */
+/* ===================================================== */
+
+.artist-image-wrapper {
+
+    width:
+        160px;
+
+    height:
+        160px;
+
+    margin:
+        0 auto 22px;
+
+    border-radius:
+        14px;
+
+    overflow:
+        hidden;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    background:
+        #050505;
+
+    border:
+        1px solid #333;
+
+}
+
+
+
+/* ===================================================== */
+/* ♠ DJ SPADE LOGO                                       */
+/* ===================================================== */
 
 .lineup-logo {
 
     width:
         140px;
 
+    max-width:
+        90%;
+
+    max-height:
+        140px;
+
+    object-fit:
+        contain;
+
     border-radius:
         12px;
-
-    margin-bottom:
-        20px;
 
 }
 
 
+
+/* ===================================================== */
+/* ♠ IANSITO PHOTO                                       */
+/* ===================================================== */
+
+.lineup-artist-photo {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center;
+
+    display:
+        block;
+
+}
+
+
+
+/* ===================================================== */
+/* ♠ COMING SOON                                         */
+/* ===================================================== */
+
 .coming-soon-box {
 
     width:
-        140px;
+        160px;
 
     height:
-        140px;
+        160px;
 
     margin:
-        0 auto 20px;
+        0 auto 22px;
 
     display:
         flex;
@@ -752,13 +900,21 @@ button:hover,
         2px dashed #555;
 
     border-radius:
-        12px;
+        14px;
 
     font-size:
         3rem;
 
+    color:
+        #777;
+
 }
 
+
+
+/* ===================================================== */
+/* ♠ LINEUP TEXT                                         */
+/* ===================================================== */
 
 .lineup-card h3 {
 
@@ -782,10 +938,19 @@ button:hover,
     line-height:
         1.6;
 
+    flex-grow:
+        1;
+
 }
 
 
+
+/* ===================================================== */
+/* ♠ LINEUP BADGES                                       */
+/* ===================================================== */
+
 .headliner,
+.opener-badge,
 .upcoming {
 
     display:
@@ -819,6 +984,17 @@ button:hover,
 
     color:
         #ff2bd6;
+
+}
+
+
+.opener-badge {
+
+    border:
+        1px solid #9b5cff;
+
+    color:
+        #9b5cff;
 
 }
 
@@ -1076,6 +1252,26 @@ button:hover,
 }
 
 
+.ticket-refund-note {
+
+    margin-top:
+        20px;
+
+    color:
+        #ff2bd6;
+
+    font-size:
+        0.85rem;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
 
 /* ===================================================== */
 /* ♠ LOCATION                                            */
@@ -1151,12 +1347,18 @@ button:hover,
 
 
 .footer p:nth-child(2) {
-    color: #ff2bd6;
+
+    color:
+        #ff2bd6;
+
 }
 
 
 .footer p:nth-child(3) {
-    color: #00d9ff;
+
+    color:
+        #00d9ff;
+
 }
 
 
@@ -1484,6 +1686,7 @@ button:hover,
 }
 
 
+
 /* ===================================================== */
 /* ♠ PAYMENT REFERENCE                                   */
 /* ===================================================== */
@@ -1759,7 +1962,10 @@ button:hover,
 
 
 .payment-footer p:last-child {
-    color: #00d9ff;
+
+    color:
+        #00d9ff;
+
 }
 
 
@@ -1942,6 +2148,18 @@ button:hover,
     }
 
 
+    .artist-image-wrapper,
+    .coming-soon-box {
+
+        width:
+            150px;
+
+        height:
+            150px;
+
+    }
+
+
     .ticket-summary {
 
         flex-direction:
@@ -2047,6 +2265,7 @@ button:hover,
             100%;
 
     }
+
 
 }
 
