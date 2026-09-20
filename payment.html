@@ -33,7 +33,7 @@
 
     <link
         rel="stylesheet"
-        href="style.css"
+        href="style.css?v=5"
     >
 
 </head>
@@ -89,14 +89,22 @@
             </p>
 
 
+            <p class="payment-price-label">
+                PER TICKET
+            </p>
+
+
             <p class="payment-description">
 
-                Enter your information below first.
+                Enter your information below
+                and choose how many tickets
+                you would like.
 
-                We will generate a unique payment code for you.
+                We will generate one unique
+                payment code for your entire order.
 
-                Put that code in the note or message when
-                sending your $5 payment.
+                Put that code in the note or message
+                when sending your payment.
 
             </p>
 
@@ -112,9 +120,13 @@
             >
 
 
+                <!-- ================================================= -->
+                <!-- EMAIL                                             -->
+                <!-- ================================================= -->
+
                 <label for="ticketEmail">
 
-                    EMAIL FOR YOUR TICKET
+                    EMAIL FOR YOUR TICKETS
 
                 </label>
 
@@ -129,6 +141,109 @@
                 >
 
 
+
+                <!-- ================================================= -->
+                <!-- QUANTITY                                          -->
+                <!-- ================================================= -->
+
+                <label for="ticketQuantity">
+
+                    NUMBER OF TICKETS
+
+                </label>
+
+
+                <select
+                    id="ticketQuantity"
+                    name="ticketQuantity"
+                    required
+                >
+
+                    <option value="1">
+                        1 Ticket
+                    </option>
+
+                    <option value="2">
+                        2 Tickets
+                    </option>
+
+                    <option value="3">
+                        3 Tickets
+                    </option>
+
+                    <option value="4">
+                        4 Tickets
+                    </option>
+
+                    <option value="5">
+                        5 Tickets
+                    </option>
+
+                    <option value="6">
+                        6 Tickets
+                    </option>
+
+                    <option value="7">
+                        7 Tickets
+                    </option>
+
+                    <option value="8">
+                        8 Tickets
+                    </option>
+
+                    <option value="9">
+                        9 Tickets
+                    </option>
+
+                    <option value="10">
+                        10 Tickets
+                    </option>
+
+                </select>
+
+
+
+                <!-- ================================================= -->
+                <!-- ORDER TOTAL                                       -->
+                <!-- ================================================= -->
+
+                <div class="order-total-box">
+
+
+                    <span class="order-total-label">
+
+                        ORDER TOTAL
+
+                    </span>
+
+
+                    <span
+                        class="order-total-price"
+                        id="orderTotal"
+                    >
+
+                        $5
+
+                    </span>
+
+
+                    <span
+                        class="order-total-detail"
+                        id="orderTotalDetail"
+                    >
+
+                        1 ticket × $5
+
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- ================================================= -->
+                <!-- PAYMENT METHOD                                    -->
+                <!-- ================================================= -->
 
                 <label for="paymentMethod">
 
@@ -163,6 +278,10 @@
 
 
 
+                <!-- ================================================= -->
+                <!-- PAYMENT NAME                                      -->
+                <!-- ================================================= -->
+
                 <label for="paymentName">
 
                     NAME / USERNAME YOU WILL PAY WITH
@@ -181,28 +300,65 @@
 
 
                 <!-- ================================================= -->
+                <!-- ♠ MULTIPLE TICKET INFO                            -->
+                <!-- ================================================= -->
+
+                <div class="multi-ticket-info">
+
+
+                    <strong>
+                        BUYING FOR FRIENDS?
+                    </strong>
+
+
+                    <p>
+
+                        You can purchase multiple tickets
+                        in one order.
+
+                        Each ticket will receive its own
+                        unique QR code.
+
+                        All tickets from this order will
+                        be sent to the email entered above.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- ================================================= -->
                 <!-- ♠ NO REFUND POLICY                                 -->
                 <!-- ================================================= -->
 
                 <div class="refund-policy">
 
+
                     <strong>
                         ALL SALES ARE FINAL.
                     </strong>
 
+
                     <p>
 
-                        No refunds will be issued after a ticket
-                        is purchased.
+                        No refunds will be issued after
+                        a ticket is purchased.
 
-                        By continuing, you acknowledge and agree
-                        to this policy.
+                        By continuing, you acknowledge
+                        and agree to this policy.
 
                     </p>
+
 
                 </div>
 
 
+
+                <!-- ================================================= -->
+                <!-- CREATE PAYMENT CODE                                -->
+                <!-- ================================================= -->
 
                 <button
                     type="submit"
@@ -214,9 +370,14 @@
 
                 </button>
 
+
             </form>
 
 
+
+            <!-- ================================================= -->
+            <!-- ♠ STATUS MESSAGE                                  -->
+            <!-- ================================================= -->
 
             <p
                 class="ticket-message"
@@ -274,10 +435,47 @@
 
 
 
+                <!-- ================================================= -->
+                <!-- ORDER SUMMARY                                     -->
+                <!-- ================================================= -->
+
+                <div class="final-order-summary">
+
+
+                    <p>
+
+                        Tickets:
+
+                        <strong
+                            id="finalTicketQuantity"
+                        >
+                            1
+                        </strong>
+
+                    </p>
+
+
+                    <p>
+
+                        Total Payment:
+
+                        <strong
+                            id="finalOrderTotal"
+                        >
+                            $5
+                        </strong>
+
+                    </p>
+
+
+                </div>
+
+
+
                 <p class="reference-warning">
 
-                    Your ticket will not be sent until
-                    your payment has been verified.
+                    Your tickets will not be sent until
+                    your full payment has been verified.
 
                 </p>
 
@@ -293,8 +491,12 @@
                 >
 
 
-                    <p>
+                    <p
+                        id="paymentAmountMessage"
+                    >
+
                         Now send your $5 payment:
+
                     </p>
 
 
@@ -334,37 +536,59 @@
 
 
             <p>
-                1. Create your payment code.
+                1. Choose how many tickets you want.
             </p>
 
 
             <p>
-                2. Copy the code.
+                2. Enter your email and payment information.
             </p>
 
 
             <p>
-                3. Send $5 using your selected payment app.
+                3. Create your payment code.
             </p>
 
 
             <p>
-                4. Put the code in the payment note.
+                4. Copy the code.
             </p>
 
 
             <p>
-                5. Courtland verifies the payment.
+                5. Send the full order total using
+                your selected payment app.
             </p>
 
 
             <p>
-                6. Your QR ticket is emailed automatically.
+                6. Put your payment code in the
+                payment note.
+            </p>
+
+
+            <p>
+                7. Courtland verifies your payment.
+            </p>
+
+
+            <p>
+                8. Each ticket receives its own
+                unique QR code.
+            </p>
+
+
+            <p>
+                9. Your QR tickets are emailed
+                automatically.
             </p>
 
 
             <p class="help-refund-warning">
-                7. All ticket sales are final. No refunds.
+
+                All ticket sales are final.
+                No refunds.
+
             </p>
 
 
@@ -395,10 +619,10 @@
 
     <!-- ================================================= -->
     <!-- ♠ SCRIPT                                           -->
-    <!-- v=3 loads current JavaScript                      -->
     <!-- ================================================= -->
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
+
 
 </body>
 

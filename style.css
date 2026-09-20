@@ -9,15 +9,29 @@
 /* ===================================================== */
 
 
+/* ===================================================== */
+/* ♠ GLOBAL                                              */
+/* ===================================================== */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    box-sizing:
+        border-box;
+
 }
 
 
 html {
-    scroll-behavior: smooth;
+
+    scroll-behavior:
+        smooth;
+
 }
 
 
@@ -1026,7 +1040,7 @@ button:hover,
 .media-intro {
 
     max-width:
-        650px;
+        700px;
 
     color:
         #d8d8d8;
@@ -1054,6 +1068,9 @@ button:hover,
     justify-content:
         center;
 
+    align-items:
+        stretch;
+
     flex-wrap:
         wrap;
 
@@ -1063,7 +1080,7 @@ button:hover,
 .social-card {
 
     width:
-        320px;
+        300px;
 
     padding:
         35px;
@@ -1076,6 +1093,12 @@ button:hover,
 
     background-color:
         #0c0c0c;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
 
 }
 
@@ -1101,6 +1124,9 @@ button:hover,
 
     margin-bottom:
         25px;
+
+    flex-grow:
+        1;
 
 }
 
@@ -1131,6 +1157,9 @@ button:hover,
     letter-spacing:
         2px;
 
+    transition:
+        0.3s ease;
+
 }
 
 
@@ -1146,6 +1175,18 @@ button:hover,
 }
 
 
+.courtland-button:hover,
+.youtube-button:hover {
+
+    background:
+        #00d9ff;
+
+    color:
+        #050505;
+
+}
+
+
 .instagram-button {
 
     color:
@@ -1153,6 +1194,48 @@ button:hover,
 
     border:
         2px solid #ff2bd6;
+
+}
+
+
+.instagram-button:hover {
+
+    background:
+        #ff2bd6;
+
+    color:
+        #050505;
+
+}
+
+
+.iansito-button {
+
+    color:
+        #9b5cff;
+
+    border:
+        2px solid #9b5cff;
+
+}
+
+
+.iansito-button:hover {
+
+    background:
+        #9b5cff;
+
+    color:
+        #050505;
+
+    box-shadow:
+        0 0 15px
+        rgba(
+            155,
+            92,
+            255,
+            0.35
+        );
 
 }
 
@@ -1510,6 +1593,26 @@ button:hover,
 }
 
 
+.payment-price-label {
+
+    margin-top:
+        2px;
+
+    color:
+        #888;
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        3px;
+
+}
+
+
 .payment-description {
 
     max-width:
@@ -1604,6 +1707,163 @@ button:hover,
 
     border-color:
         #ff2bd6;
+
+}
+
+
+
+/* ===================================================== */
+/* ♠ ORDER TOTAL                                         */
+/* ===================================================== */
+
+.order-total-box {
+
+    margin:
+        12px 0 15px;
+
+    padding:
+        22px 18px;
+
+    border:
+        1px solid #333;
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(
+            0,
+            217,
+            255,
+            0.035
+        );
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+}
+
+
+.order-total-label {
+
+    color:
+        #aaa;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.order-total-price {
+
+    margin-top:
+        7px;
+
+    color:
+        #00d9ff;
+
+    font-size:
+        2.4rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.order-total-detail {
+
+    margin-top:
+        5px;
+
+    color:
+        #888;
+
+    font-size:
+        0.82rem;
+
+}
+
+
+
+/* ===================================================== */
+/* ♠ MULTIPLE TICKET INFO                                */
+/* ===================================================== */
+
+.multi-ticket-info {
+
+    margin-top:
+        18px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid #9b5cff;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(
+            155,
+            92,
+            255,
+            0.06
+        );
+
+    text-align:
+        center;
+
+}
+
+
+.multi-ticket-info strong {
+
+    display:
+        block;
+
+    color:
+        #9b5cff;
+
+    font-size:
+        0.9rem;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.multi-ticket-info p {
+
+    color:
+        #cfcfcf;
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.55;
 
 }
 
@@ -1784,6 +2044,53 @@ button:hover,
 }
 
 
+
+/* ===================================================== */
+/* ♠ FINAL ORDER SUMMARY                                 */
+/* ===================================================== */
+
+.final-order-summary {
+
+    margin:
+        22px 0;
+
+    padding:
+        18px;
+
+    border:
+        1px solid #333;
+
+    border-radius:
+        10px;
+
+    background:
+        #090909;
+
+}
+
+
+.final-order-summary p {
+
+    margin:
+        7px 0;
+
+    color:
+        #cfcfcf;
+
+    font-size:
+        0.95rem;
+
+}
+
+
+.final-order-summary strong {
+
+    color:
+        #00d9ff;
+
+}
+
+
 .reference-warning {
 
     margin-top:
@@ -1794,6 +2101,9 @@ button:hover,
 
     font-size:
         0.9rem;
+
+    line-height:
+        1.5;
 
 }
 
@@ -1851,6 +2161,9 @@ button:hover,
 
     letter-spacing:
         2px;
+
+    transition:
+        0.3s ease;
 
 }
 
@@ -1940,6 +2253,9 @@ button:hover,
 
     text-align:
         center;
+
+    line-height:
+        1.5;
 
 }
 
@@ -2221,6 +2537,57 @@ button:hover,
     }
 
 
+    .payment-price-label {
+
+        font-size:
+            0.68rem;
+
+    }
+
+
+    .order-total-box {
+
+        padding:
+            18px 14px;
+
+    }
+
+
+    .order-total-price {
+
+        font-size:
+            2rem;
+
+    }
+
+
+    .multi-ticket-info {
+
+        padding:
+            16px 14px;
+
+    }
+
+
+    .multi-ticket-info strong {
+
+        font-size:
+            0.82rem;
+
+        letter-spacing:
+            1.5px;
+
+    }
+
+
+    .multi-ticket-info p {
+
+        font-size:
+            0.82rem;
+
+    }
+
+
     .refund-policy {
 
         padding:
@@ -2255,6 +2622,14 @@ button:hover,
 
         letter-spacing:
             2px;
+
+    }
+
+
+    .final-order-summary {
+
+        padding:
+            15px;
 
     }
 

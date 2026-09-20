@@ -1,23 +1,28 @@
 // =====================================================
-// ♠ DJ SPADE
-// FREDSGIVING RAVE
-// Website + Ticket Frontend
-// Built by Gerardo Camacho
+//
+//                     ♠ DJ SPADE ♠
+//
+//                 FREDSGIVING RAVE
+//
+//                    WEBSITE JS
+//
+//              Built by Gerardo Camacho
+//
 // =====================================================
 
-console.log(`
-♠ FREDSGIVING RAVE ♠
-Website by Gerardo Camacho / DJ Spade
-`);
+
+console.log(
+  "♠ FREDSGIVING RAVE ♠ Website by Gerardo Camacho / DJ Spade"
+);
 
 
 
 // =====================================================
-// ♠ NEW GOOGLE APPS SCRIPT BACKEND
+// ♠ TICKET BACKEND
 // =====================================================
 
 const TICKET_API =
-    "https://script.google.com/macros/s/AKfycby8XSX7NDmj5cqp88KdISQqV7T4mLAvdcIub3oYyNeV-VFRtq5oIysVGBjePofnwvMd/exec";
+  "https://script.google.com/macros/s/AKfycby8XSX7NDmj5cqp88KdISQqV7T4mLAvdcIub3oYyNeV-VFRtq5oIysVGBjePofnwvMd/exec";
 
 
 
@@ -27,16 +32,24 @@ const TICKET_API =
 
 const PAYMENT_LINKS = {
 
-    "PayPal":
-        "https://www.paypal.me/electrokipper",
+  "PayPal":
+    "https://www.paypal.me/electrokipper",
 
-    "Venmo":
-        "https://www.venmo.com/kidpizza",
+  "Venmo":
+    "https://www.venmo.com/kidpizza",
 
-    "Cash App":
-        "https://cash.app/$kidpizza"
+  "Cash App":
+    "https://cash.app/$kidpizza"
 
 };
+
+
+
+// =====================================================
+// ♠ TICKET PRICE
+// =====================================================
+
+const TICKET_PRICE = 5;
 
 
 
@@ -45,108 +58,133 @@ const PAYMENT_LINKS = {
 // =====================================================
 
 const menuButton =
-    document.getElementById("menuButton");
+  document.getElementById(
+    "menuButton"
+  );
+
 
 const closeMenu =
-    document.getElementById("closeMenu");
+  document.getElementById(
+    "closeMenu"
+  );
+
 
 const mobileMenu =
-    document.getElementById("mobileMenu");
+  document.getElementById(
+    "mobileMenu"
+  );
+
 
 
 if (
-    menuButton &&
-    closeMenu &&
-    mobileMenu
+  menuButton &&
+  mobileMenu
 ) {
 
-    menuButton.addEventListener(
-        "click",
-        function () {
+  menuButton.addEventListener(
+    "click",
+    function () {
 
-            mobileMenu.classList.add("active");
+      mobileMenu.classList.add(
+        "active"
+      );
 
-            document.body.style.overflow =
-                "hidden";
+    }
+  );
 
-        }
+}
+
+
+
+if (
+  closeMenu &&
+  mobileMenu
+) {
+
+  closeMenu.addEventListener(
+    "click",
+    function () {
+
+      mobileMenu.classList.remove(
+        "active"
+      );
+
+    }
+  );
+
+}
+
+
+
+if (mobileMenu) {
+
+  const mobileLinks =
+    mobileMenu.querySelectorAll(
+      "a"
     );
 
 
-    closeMenu.addEventListener(
+  mobileLinks.forEach(
+    function (link) {
+
+      link.addEventListener(
         "click",
         function () {
 
-            mobileMenu.classList.remove("active");
-
-            document.body.style.overflow =
-                "";
+          mobileMenu.classList.remove(
+            "active"
+          );
 
         }
-    );
+      );
 
-
-    document
-        .querySelectorAll(
-            ".mobile-menu-links a"
-        )
-        .forEach(
-            function (link) {
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        mobileMenu
-                            .classList
-                            .remove("active");
-
-                        document.body.style.overflow =
-                            "";
-
-                    }
-                );
-
-            }
-        );
+    }
+  );
 
 }
 
 
 
 // =====================================================
-// ♠ PAYMENT CODE GENERATOR
+// ♠ PAYMENT REFERENCE GENERATOR
+//
+// Example:
+//
+// FRED-PAY-ABC123
 // =====================================================
 
 function createPaymentReference() {
 
-    const characters =
-        "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-
-    let code = "";
+  const characters =
+    "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 
-    for (
-        let i = 0;
-        i < 6;
-        i++
-    ) {
-
-        const randomIndex =
-            Math.floor(
-                Math.random() *
-                characters.length
-            );
-
-        code +=
-            characters.charAt(
-                randomIndex
-            );
-
-    }
+  let code =
+    "";
 
 
-    return "FRED-PAY-" + code;
+  for (
+    let i = 0;
+    i < 6;
+    i++
+  ) {
+
+    code +=
+      characters.charAt(
+
+        Math.floor(
+
+          Math.random() *
+          characters.length
+
+        )
+
+      );
+
+  }
+
+
+  return "FRED-PAY-" + code;
 
 }
 
@@ -157,368 +195,661 @@ function createPaymentReference() {
 // =====================================================
 
 const ticketForm =
-    document.getElementById(
-        "ticketForm"
-    );
+  document.getElementById(
+    "ticketForm"
+  );
+
 
 const ticketMessage =
-    document.getElementById(
-        "ticketMessage"
-    );
+  document.getElementById(
+    "ticketMessage"
+  );
+
 
 const paymentReferenceBox =
-    document.getElementById(
-        "paymentReferenceBox"
-    );
+  document.getElementById(
+    "paymentReferenceBox"
+  );
 
-const paymentReferenceText =
-    document.getElementById(
-        "paymentReference"
-    );
+
+const paymentReference =
+  document.getElementById(
+    "paymentReference"
+  );
+
 
 const selectedPaymentButton =
-    document.getElementById(
-        "selectedPaymentButton"
-    );
+  document.getElementById(
+    "selectedPaymentButton"
+  );
+
 
 const createCodeButton =
-    document.getElementById(
-        "createCodeButton"
-    );
+  document.getElementById(
+    "createCodeButton"
+  );
+
+
+const ticketEmail =
+  document.getElementById(
+    "ticketEmail"
+  );
+
+
+const ticketQuantity =
+  document.getElementById(
+    "ticketQuantity"
+  );
+
+
+const paymentMethod =
+  document.getElementById(
+    "paymentMethod"
+  );
+
+
+const paymentName =
+  document.getElementById(
+    "paymentName"
+  );
+
+
+const copyReferenceButton =
+  document.getElementById(
+    "copyReferenceButton"
+  );
+
+
+const orderTotal =
+  document.getElementById(
+    "orderTotal"
+  );
+
+
+const orderTotalDetail =
+  document.getElementById(
+    "orderTotalDetail"
+  );
+
+
+const finalTicketQuantity =
+  document.getElementById(
+    "finalTicketQuantity"
+  );
+
+
+const finalOrderTotal =
+  document.getElementById(
+    "finalOrderTotal"
+  );
+
+
+const paymentAmountMessage =
+  document.getElementById(
+    "paymentAmountMessage"
+  );
 
 
 
 // =====================================================
-// ♠ SUBMIT TICKET REQUEST
+// ♠ ORDER TOTAL
+// =====================================================
+
+function getQuantity() {
+
+  if (!ticketQuantity) {
+
+    return 1;
+
+  }
+
+
+  const quantity =
+    parseInt(
+      ticketQuantity.value,
+      10
+    );
+
+
+  if (
+    Number.isNaN(quantity) ||
+    quantity < 1
+  ) {
+
+    return 1;
+
+  }
+
+
+  return quantity;
+
+}
+
+
+
+function getOrderTotal() {
+
+  return (
+    getQuantity() *
+    TICKET_PRICE
+  );
+
+}
+
+
+
+// =====================================================
+// ♠ UPDATE LIVE ORDER TOTAL
+// =====================================================
+
+function updateOrderTotal() {
+
+  if (!ticketQuantity) {
+
+    return;
+
+  }
+
+
+  const quantity =
+    getQuantity();
+
+
+  const total =
+    getOrderTotal();
+
+
+  if (orderTotal) {
+
+    orderTotal.textContent =
+      "$" + total;
+
+  }
+
+
+  if (orderTotalDetail) {
+
+    orderTotalDetail.textContent =
+
+      quantity +
+
+      (
+        quantity === 1
+          ? " ticket × $5"
+          : " tickets × $5"
+      );
+
+  }
+
+}
+
+
+
+if (ticketQuantity) {
+
+  ticketQuantity.addEventListener(
+    "change",
+    updateOrderTotal
+  );
+
+
+  updateOrderTotal();
+
+}
+
+
+
+// =====================================================
+// ♠ SUBMIT TICKET ORDER
 // =====================================================
 
 if (ticketForm) {
 
-    ticketForm.addEventListener(
-        "submit",
-        async function (event) {
+  ticketForm.addEventListener(
+    "submit",
+    async function (event) {
 
-            event.preventDefault();
 
+      event.preventDefault();
 
-            // -----------------------------------------
-            // Get buyer information
-            // -----------------------------------------
 
-            const email =
-                document
-                    .getElementById(
-                        "ticketEmail"
-                    )
-                    .value
-                    .trim();
 
+      // =================================================
+      // Read form values
+      // =================================================
 
-            const paymentMethod =
-                document
-                    .getElementById(
-                        "paymentMethod"
-                    )
-                    .value;
+      const email =
+        ticketEmail
+          ? ticketEmail.value.trim()
+          : "";
 
 
-            const paymentName =
-                document
-                    .getElementById(
-                        "paymentName"
-                    )
-                    .value
-                    .trim();
+      const quantity =
+        getQuantity();
 
 
+      const method =
+        paymentMethod
+          ? paymentMethod.value.trim()
+          : "";
 
-            // -----------------------------------------
-            // Validate fields
-            // -----------------------------------------
 
-            if (
-                !email ||
-                !paymentMethod ||
-                !paymentName
-            ) {
+      const name =
+        paymentName
+          ? paymentName.value.trim()
+          : "";
 
-                ticketMessage.textContent =
-                    "Please complete all fields.";
 
-                return;
 
-            }
+      // =================================================
+      // Validate
+      // =================================================
 
+      if (
+        !email ||
+        !method ||
+        !name
+      ) {
 
+        if (ticketMessage) {
 
-            // -----------------------------------------
-            // Generate payment reference
-            // -----------------------------------------
-
-            const paymentReference =
-                createPaymentReference();
-
-
-
-            createCodeButton.disabled =
-                true;
-
-
-            createCodeButton.textContent =
-                "CREATING CODE...";
-
-
-            ticketMessage.textContent =
-                "Creating your payment request...";
-
-
-
-            console.log(
-                "♠ Sending ticket request:",
-                {
-                    email,
-                    paymentMethod,
-                    paymentName,
-                    paymentReference
-                }
-            );
-
-
-
-            try {
-
-
-                // =====================================
-                // ♠ SEND TO APPS SCRIPT
-                //
-                // This matches the browser test
-                // that successfully wrote to Sheets.
-                // =====================================
-
-                await fetch(
-                    TICKET_API,
-                    {
-
-                        method:
-                            "POST",
-
-                        mode:
-                            "no-cors",
-
-                        headers: {
-
-                            "Content-Type":
-                                "text/plain;charset=utf-8"
-
-                        },
-
-                        body:
-                            JSON.stringify({
-
-                                email:
-                                    email,
-
-                                paymentMethod:
-                                    paymentMethod,
-
-                                paymentName:
-                                    paymentName,
-
-                                paymentReference:
-                                    paymentReference
-
-                            })
-
-                    }
-                );
-
-
-
-                console.log(
-                    "♠ POST request completed:",
-                    paymentReference
-                );
-
-
-
-                // =====================================
-                // Show customer's payment code
-                // =====================================
-
-                paymentReferenceText.textContent =
-                    paymentReference;
-
-
-                paymentReferenceBox
-                    .classList
-                    .remove("hidden");
-
-
-
-                // =====================================
-                // Payment app button
-                // =====================================
-
-                selectedPaymentButton.href =
-                    PAYMENT_LINKS[
-                        paymentMethod
-                    ];
-
-
-                selectedPaymentButton.textContent =
-                    "PAY WITH " +
-                    paymentMethod.toUpperCase();
-
-
-
-                ticketMessage.textContent =
-                    "Payment code created. Copy it before paying.";
-
-
-
-                // =====================================
-                // Lock the information so the customer
-                // can't accidentally create duplicates.
-                // =====================================
-
-                ticketForm
-                    .querySelectorAll(
-                        "input, select"
-                    )
-                    .forEach(
-                        function (field) {
-
-                            field.disabled =
-                                true;
-
-                        }
-                    );
-
-
-                createCodeButton.style.display =
-                    "none";
-
-
-
-                // =====================================
-                // Scroll to payment code
-                // =====================================
-
-                paymentReferenceBox
-                    .scrollIntoView({
-
-                        behavior:
-                            "smooth",
-
-                        block:
-                            "center"
-
-                    });
-
-
-            } catch (error) {
-
-
-                console.error(
-                    "♠ Ticket request failed:",
-                    error
-                );
-
-
-                ticketMessage.textContent =
-                    "Something went wrong. Please try again.";
-
-
-                createCodeButton.disabled =
-                    false;
-
-
-                createCodeButton.textContent =
-                    "CREATE PAYMENT CODE";
-
-            }
+          ticketMessage.textContent =
+            "Please complete all required fields.";
 
         }
-    );
+
+
+        return;
+
+      }
+
+
+
+      if (
+        quantity < 1 ||
+        quantity > 10
+      ) {
+
+        if (ticketMessage) {
+
+          ticketMessage.textContent =
+            "Please choose between 1 and 10 tickets.";
+
+        }
+
+
+        return;
+
+      }
+
+
+
+      if (
+        !PAYMENT_LINKS[
+          method
+        ]
+      ) {
+
+        if (ticketMessage) {
+
+          ticketMessage.textContent =
+            "Please select a valid payment method.";
+
+        }
+
+
+        return;
+
+      }
+
+
+
+      // =================================================
+      // Create one payment reference for whole order
+      // =================================================
+
+      const reference =
+        createPaymentReference();
+
+
+
+      const total =
+        quantity *
+        TICKET_PRICE;
+
+
+
+      // =================================================
+      // Disable submit button while saving
+      // =================================================
+
+      if (createCodeButton) {
+
+        createCodeButton.disabled =
+          true;
+
+
+        createCodeButton.textContent =
+          "CREATING CODE...";
+
+      }
+
+
+
+      if (ticketMessage) {
+
+        ticketMessage.textContent =
+          "Creating your payment code...";
+
+      }
+
+
+
+      try {
+
+
+        // =================================================
+        // Send order to Apps Script
+        // =================================================
+
+        await fetch(
+          TICKET_API,
+          {
+
+            method:
+              "POST",
+
+            mode:
+              "no-cors",
+
+            headers: {
+
+              "Content-Type":
+                "text/plain;charset=utf-8"
+
+            },
+
+            body:
+              JSON.stringify({
+
+                email:
+                  email,
+
+                paymentMethod:
+                  method,
+
+                paymentName:
+                  name,
+
+                paymentReference:
+                  reference,
+
+                ticketQuantity:
+                  quantity
+
+              })
+
+          }
+        );
+
+
+
+        // =================================================
+        // Show reference code
+        // =================================================
+
+        if (paymentReference) {
+
+          paymentReference.textContent =
+            reference;
+
+        }
+
+
+
+        if (finalTicketQuantity) {
+
+          finalTicketQuantity.textContent =
+            quantity;
+
+        }
+
+
+
+        if (finalOrderTotal) {
+
+          finalOrderTotal.textContent =
+            "$" + total;
+
+        }
+
+
+
+        if (paymentAmountMessage) {
+
+          paymentAmountMessage.textContent =
+
+            "Now send your $" +
+            total +
+            " payment:";
+
+        }
+
+
+
+        if (selectedPaymentButton) {
+
+          selectedPaymentButton.href =
+            PAYMENT_LINKS[
+              method
+            ];
+
+
+          selectedPaymentButton.textContent =
+
+            "PAY $" +
+            total +
+            " WITH " +
+            method.toUpperCase();
+
+        }
+
+
+
+        if (paymentReferenceBox) {
+
+          paymentReferenceBox.classList.remove(
+            "hidden"
+          );
+
+        }
+
+
+
+        if (ticketMessage) {
+
+          ticketMessage.textContent =
+            "Payment code created. Copy it before paying.";
+
+        }
+
+
+
+        // =================================================
+        // Lock form after order is created
+        // =================================================
+
+        if (ticketEmail) {
+
+          ticketEmail.disabled =
+            true;
+
+        }
+
+
+        if (ticketQuantity) {
+
+          ticketQuantity.disabled =
+            true;
+
+        }
+
+
+        if (paymentMethod) {
+
+          paymentMethod.disabled =
+            true;
+
+        }
+
+
+        if (paymentName) {
+
+          paymentName.disabled =
+            true;
+
+        }
+
+
+        if (createCodeButton) {
+
+          createCodeButton.style.display =
+            "none";
+
+        }
+
+
+
+        // =================================================
+        // Scroll to payment code
+        // =================================================
+
+        if (paymentReferenceBox) {
+
+          paymentReferenceBox.scrollIntoView(
+            {
+
+              behavior:
+                "smooth",
+
+              block:
+                "center"
+
+            }
+          );
+
+        }
+
+
+      } catch (error) {
+
+
+        console.error(
+          "♠ Ticket request error:",
+          error
+        );
+
+
+        if (ticketMessage) {
+
+          ticketMessage.textContent =
+            "There was a problem creating your payment code. Please try again.";
+
+        }
+
+
+
+        if (createCodeButton) {
+
+          createCodeButton.disabled =
+            false;
+
+
+          createCodeButton.textContent =
+            "CREATE PAYMENT CODE";
+
+        }
+
+      }
+
+    }
+  );
 
 }
 
 
 
 // =====================================================
-// ♠ COPY PAYMENT CODE
+// ♠ COPY PAYMENT REFERENCE
 // =====================================================
-
-const copyReferenceButton =
-    document.getElementById(
-        "copyReferenceButton"
-    );
-
 
 if (
-    copyReferenceButton &&
-    paymentReferenceText
+  copyReferenceButton &&
+  paymentReference
 ) {
 
-    copyReferenceButton.addEventListener(
-        "click",
-        async function () {
+  copyReferenceButton.addEventListener(
+    "click",
+    async function () {
 
 
-            const code =
-                paymentReferenceText
-                    .textContent
-                    .trim();
+      const code =
+        paymentReference.textContent.trim();
 
 
-            try {
+
+      try {
 
 
-                await navigator
-                    .clipboard
-                    .writeText(
-                        code
-                    );
+        await navigator.clipboard.writeText(
+          code
+        );
 
 
-                copyReferenceButton.textContent =
-                    "COPIED ✓";
+        const originalText =
+          copyReferenceButton.textContent;
 
 
-                setTimeout(
-                    function () {
-
-                        copyReferenceButton.textContent =
-                            "COPY CODE";
-
-                    },
-                    2000
-                );
+        copyReferenceButton.textContent =
+          "COPIED ✓";
 
 
-            } catch (error) {
+        setTimeout(
+          function () {
+
+            copyReferenceButton.textContent =
+              originalText;
+
+          },
+          1800
+        );
 
 
-                console.error(
-                    "♠ Copy failed:",
-                    error
-                );
+      } catch (error) {
 
 
-                alert(
-                    "Your payment code is: " +
-                    code
-                );
+        console.error(
+          "♠ Clipboard error:",
+          error
+        );
 
-            }
 
-        }
-    );
+        alert(
+          "Copy this payment code:\n\n" +
+          code
+        );
+
+      }
+
+    }
+  );
 
 }
 
 
 
 // =====================================================
-// ♠ END OF DJ SPADE FRONTEND
+//
+//                ♠ END OF DJ SPADE JS ♠
+//
 // =====================================================
