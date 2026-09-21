@@ -46,10 +46,15 @@ const PAYMENT_LINKS = {
 
 
 // =====================================================
-// ♠ TICKET PRICE
+// ♠ TICKET SETTINGS
 // =====================================================
 
-const TICKET_PRICE = 5;
+const TICKET_PRICE =
+  5;
+
+
+const MAX_ORDER_QUANTITY =
+  10;
 
 
 
@@ -147,10 +152,6 @@ if (mobileMenu) {
 
 // =====================================================
 // ♠ PAYMENT REFERENCE GENERATOR
-//
-// Example:
-//
-// FRED-PAY-ABC123
 // =====================================================
 
 function createPaymentReference() {
@@ -292,7 +293,63 @@ const paymentAmountMessage =
 
 
 // =====================================================
-// ♠ ORDER TOTAL
+// ♠ NEW CAPACITY ELEMENTS
+//
+// These will be added in payment.html next.
+//
+// If they do not exist yet, the script
+// still works safely.
+// =====================================================
+
+const capacityBox =
+  document.getElementById(
+    "capacityBox"
+  );
+
+
+const capacityText =
+  document.getElementById(
+    "capacityText"
+  );
+
+
+const capacityRemaining =
+  document.getElementById(
+    "capacityRemaining"
+  );
+
+
+const soldOutBox =
+  document.getElementById(
+    "soldOutBox"
+  );
+
+
+
+// =====================================================
+// ♠ CAPACITY STATE
+// =====================================================
+
+let liveCapacity = {
+
+  capacity:
+    170,
+
+  reserved:
+    0,
+
+  remaining:
+    170,
+
+  soldOut:
+    false
+
+};
+
+
+
+// =====================================================
+// ♠ GET QUANTITY
 // =====================================================
 
 function getQuantity() {
@@ -326,6 +383,10 @@ function getQuantity() {
 }
 
 
+
+// =====================================================
+// ♠ ORDER TOTAL
+// =====================================================
 
 function getOrderTotal() {
 
@@ -385,6 +446,543 @@ function updateOrderTotal() {
 
 
 
+// =====================================================
+// ♠ BUILD QUANTITY OPTIONS
+//
+// Quantity is limited to:
+//
+// 1. Maximum order size = 10
+// 2. Remaining event capacity
+// =====================================================
+
+function rebuildQuantityOptions() {
+
+  if (!ticketQuantity) {
+
+    return;
+
+  }
+
+
+
+  const previousQuantity =
+    getQuantity();
+
+
+
+  const maximumAllowed =
+    Math.min(
+
+      MAX_ORDER_QUANTITY,
+
+      Math.max(
+        0,
+        liveCapacity.remaining
+      )
+
+    );
+
+
+
+  ticketQuantity.innerHTML =
+    "";
+
+
+
+  // =================================================
+  // Sold out
+  // =================================================
+
+  if (
+    maximumAllowed <= 0
+  ) {
+
+    const option =
+      document.createElement(
+        "option"
+      );
+
+
+    option.value =
+      "";
+
+
+    option.textContent =
+      "Sold Out";
+
+
+    ticketQuantity.appendChild(
+      option
+    );
+
+
+    ticketQuantity.disabled =
+      true;
+
+
+    updateOrderTotal();
+
+
+    return;
+
+  }
+
+
+
+  // =================================================
+  // Add available quantities
+  // =================================================
+
+  for (
+    let i = 1;
+    i <= maximumAllowed;
+    i++
+  ) {
+
+
+    const option =
+      document.createElement(
+        "option"
+      );
+
+
+    option.value =
+      String(
+        i
+      );
+
+
+    option.textContent =
+
+      i +
+
+      (
+        i === 1
+          ? " Ticket"
+          : " Tickets"
+      );
+
+
+    ticketQuantity.appendChild(
+      option
+    );
+
+  }
+
+
+
+  // =================================================
+  // Preserve current selection when possible
+  // =================================================
+
+  const safeQuantity =
+    Math.min(
+      previousQuantity,
+      maximumAllowed
+    );
+
+
+  ticketQuantity.value =
+    String(
+      safeQuantity
+    );
+
+
+  ticketQuantity.disabled =
+    false;
+
+
+  updateOrderTotal();
+
+}
+
+
+
+// =====================================================
+// ♠ SOLD OUT MODE
+// =====================================================
+
+function activateSoldOutMode() {
+
+
+  liveCapacity.soldOut =
+    true;
+
+
+  liveCapacity.remaining =
+    0;
+
+
+
+  if (ticketForm) {
+
+    ticketForm.classList.add(
+      "sold-out-form"
+    );
+
+  }
+
+
+
+  if (ticketEmail) {
+
+    ticketEmail.disabled =
+      true;
+
+  }
+
+
+  if (ticketQuantity) {
+
+    ticketQuantity.disabled =
+      true;
+
+  }
+
+
+  if (paymentMethod) {
+
+    paymentMethod.disabled =
+      true;
+
+  }
+
+
+  if (paymentName) {
+
+    paymentName.disabled =
+      true;
+
+  }
+
+
+  if (createCodeButton) {
+
+    createCodeButton.disabled =
+      true;
+
+
+    createCodeButton.textContent =
+      "SOLD OUT";
+
+  }
+
+
+
+  if (capacityText) {
+
+    capacityText.textContent =
+      "Fredsgiving Rave has reached maximum capacity.";
+
+  }
+
+
+
+  if (capacityRemaining) {
+
+    capacityRemaining.textContent =
+      "0";
+
+  }
+
+
+
+  if (soldOutBox) {
+
+    soldOutBox.classList.remove(
+      "hidden"
+    );
+
+  }
+
+
+
+  if (ticketMessage) {
+
+    ticketMessage.textContent =
+      "Ticket sales are currently closed because the event has reached capacity.";
+
+  }
+
+
+
+  rebuildQuantityOptions();
+
+}
+
+
+
+// =====================================================
+// ♠ ACTIVE SALES MODE
+// =====================================================
+
+function activateSalesMode() {
+
+
+  if (ticketForm) {
+
+    ticketForm.classList.remove(
+      "sold-out-form"
+    );
+
+  }
+
+
+
+  if (ticketEmail) {
+
+    ticketEmail.disabled =
+      false;
+
+  }
+
+
+  if (ticketQuantity) {
+
+    ticketQuantity.disabled =
+      false;
+
+  }
+
+
+  if (paymentMethod) {
+
+    paymentMethod.disabled =
+      false;
+
+  }
+
+
+  if (paymentName) {
+
+    paymentName.disabled =
+      false;
+
+  }
+
+
+  if (createCodeButton) {
+
+    createCodeButton.disabled =
+      false;
+
+
+    createCodeButton.textContent =
+      "CREATE PAYMENT CODE";
+
+  }
+
+
+
+  if (soldOutBox) {
+
+    soldOutBox.classList.add(
+      "hidden"
+    );
+
+  }
+
+
+
+  rebuildQuantityOptions();
+
+}
+
+
+
+// =====================================================
+// ♠ CAPACITY CALLBACK
+//
+// Google Apps Script calls this through JSONP.
+// =====================================================
+
+function fredsgivingCapacityCallback(
+  data
+) {
+
+
+  if (!data) {
+
+    return;
+
+  }
+
+
+
+  liveCapacity = {
+
+    capacity:
+      Number(
+        data.capacity
+      ) || 170,
+
+    reserved:
+      Number(
+        data.reserved
+      ) || 0,
+
+    remaining:
+      Number(
+        data.remaining
+      ) || 0,
+
+    soldOut:
+      Boolean(
+        data.soldOut
+      )
+
+  };
+
+
+
+  console.log(
+    "♠ Fredsgiving capacity:",
+    liveCapacity
+  );
+
+
+
+  if (capacityRemaining) {
+
+    capacityRemaining.textContent =
+      liveCapacity.remaining;
+
+  }
+
+
+
+  if (capacityText) {
+
+
+    if (
+      liveCapacity.soldOut
+    ) {
+
+      capacityText.textContent =
+        "SOLD OUT";
+
+    } else {
+
+
+      capacityText.textContent =
+
+        liveCapacity.remaining +
+
+        (
+          liveCapacity.remaining === 1
+            ? " spot remaining"
+            : " spots remaining"
+        );
+
+    }
+
+  }
+
+
+
+  if (
+    liveCapacity.soldOut ||
+    liveCapacity.remaining <= 0
+  ) {
+
+    activateSoldOutMode();
+
+  } else {
+
+    activateSalesMode();
+
+  }
+
+}
+
+
+
+// =====================================================
+// ♠ LOAD LIVE CAPACITY
+//
+// Uses JSONP because the site is hosted
+// on GitHub Pages and Apps Script is
+// on another domain.
+// =====================================================
+
+function loadCapacity() {
+
+
+  // =================================================
+  // Remove old JSONP script if one exists
+  // =================================================
+
+  const oldScript =
+    document.getElementById(
+      "fredsgivingCapacityScript"
+    );
+
+
+  if (oldScript) {
+
+    oldScript.remove();
+
+  }
+
+
+
+  const script =
+    document.createElement(
+      "script"
+    );
+
+
+  script.id =
+    "fredsgivingCapacityScript";
+
+
+
+  script.src =
+
+    TICKET_API +
+
+    "?action=capacity" +
+
+    "&callback=fredsgivingCapacityCallback" +
+
+    "&t=" +
+
+    Date.now();
+
+
+
+  script.onerror =
+    function () {
+
+
+      console.error(
+        "♠ Could not load live capacity."
+      );
+
+
+      if (capacityText) {
+
+        capacityText.textContent =
+          "Capacity status unavailable";
+
+      }
+
+    };
+
+
+
+  document.body.appendChild(
+    script
+  );
+
+}
+
+
+
+// =====================================================
+// ♠ QUANTITY CHANGE
+// =====================================================
+
 if (ticketQuantity) {
 
   ticketQuantity.addEventListener(
@@ -411,6 +1009,24 @@ if (ticketForm) {
 
 
       event.preventDefault();
+
+
+
+      // =================================================
+      // Block if sold out
+      // =================================================
+
+      if (
+        liveCapacity.soldOut ||
+        liveCapacity.remaining <= 0
+      ) {
+
+        activateSoldOutMode();
+
+
+        return;
+
+      }
 
 
 
@@ -442,7 +1058,7 @@ if (ticketForm) {
 
 
       // =================================================
-      // Validate
+      // Validate fields
       // =================================================
 
       if (
@@ -465,9 +1081,39 @@ if (ticketForm) {
 
 
 
+      // =================================================
+      // Validate against live remaining capacity
+      // =================================================
+
+      if (
+        quantity >
+        liveCapacity.remaining
+      ) {
+
+        if (ticketMessage) {
+
+          ticketMessage.textContent =
+
+            "Only " +
+            liveCapacity.remaining +
+            " ticket spot(s) remain.";
+
+        }
+
+
+        loadCapacity();
+
+
+        return;
+
+      }
+
+
+
       if (
         quantity < 1 ||
-        quantity > 10
+        quantity >
+        MAX_ORDER_QUANTITY
       ) {
 
         if (ticketMessage) {
@@ -505,7 +1151,7 @@ if (ticketForm) {
 
 
       // =================================================
-      // Create one payment reference for whole order
+      // Create payment reference
       // =================================================
 
       const reference =
@@ -520,7 +1166,7 @@ if (ticketForm) {
 
 
       // =================================================
-      // Disable submit button while saving
+      // Disable button while saving
       // =================================================
 
       if (createCodeButton) {
@@ -549,7 +1195,14 @@ if (ticketForm) {
 
 
         // =================================================
-        // Send order to Apps Script
+        // Send order
+        //
+        // NOTE:
+        // no-cors means the browser cannot inspect
+        // the Apps Script response.
+        //
+        // Backend capacity enforcement remains
+        // the final authority.
         // =================================================
 
         await fetch(
@@ -595,7 +1248,18 @@ if (ticketForm) {
 
 
         // =================================================
-        // Show reference code
+        // Briefly refresh capacity after submission
+        // =================================================
+
+        setTimeout(
+          loadCapacity,
+          1200
+        );
+
+
+
+        // =================================================
+        // Display payment information
         // =================================================
 
         if (paymentReference) {
@@ -676,7 +1340,7 @@ if (ticketForm) {
 
 
         // =================================================
-        // Lock form after order is created
+        // Lock the order form
         // =================================================
 
         if (ticketEmail) {
@@ -721,7 +1385,7 @@ if (ticketForm) {
 
 
         // =================================================
-        // Scroll to payment code
+        // Scroll to code
         // =================================================
 
         if (paymentReferenceBox) {
@@ -842,6 +1506,36 @@ if (
       }
 
     }
+  );
+
+}
+
+
+
+// =====================================================
+// ♠ INITIAL CAPACITY CHECK
+// =====================================================
+
+if (ticketForm) {
+
+  loadCapacity();
+
+}
+
+
+
+// =====================================================
+// ♠ OPTIONAL CAPACITY REFRESH
+//
+// Refresh every 60 seconds while someone
+// is sitting on the payment page.
+// =====================================================
+
+if (ticketForm) {
+
+  setInterval(
+    loadCapacity,
+    60000
   );
 
 }

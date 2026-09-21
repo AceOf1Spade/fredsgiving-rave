@@ -33,7 +33,7 @@
 
     <link
         rel="stylesheet"
-        href="style.css?v=5"
+        href="style.css?v=7"
     >
 
 </head>
@@ -92,6 +92,77 @@
             <p class="payment-price-label">
                 PER TICKET
             </p>
+
+
+
+            <!-- ================================================= -->
+            <!-- ♠ LIVE CAPACITY                                    -->
+            <!-- ================================================= -->
+
+            <div
+                class="capacity-box"
+                id="capacityBox"
+            >
+
+                <p class="capacity-label">
+                    EVENT CAPACITY
+                </p>
+
+
+                <p
+                    class="capacity-text"
+                    id="capacityText"
+                >
+                    Checking availability...
+                </p>
+
+
+                <p class="capacity-count">
+
+                    <span
+                        id="capacityRemaining"
+                    >
+                        --
+                    </span>
+
+                    SPOTS REMAINING
+
+                </p>
+
+
+                <p class="capacity-limit">
+                    Maximum attendance: 170 guests
+                </p>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- ♠ SOLD OUT MESSAGE                                 -->
+            <!-- ================================================= -->
+
+            <div
+                class="sold-out-box hidden"
+                id="soldOutBox"
+            >
+
+                <strong>
+                    SOLD OUT
+                </strong>
+
+
+                <p>
+
+                    Fredsgiving Rave has reached
+                    maximum capacity.
+
+                    Ticket sales are now closed.
+
+                </p>
+
+            </div>
+
 
 
             <p class="payment-description">
@@ -211,9 +282,7 @@
 
 
                     <span class="order-total-label">
-
                         ORDER TOTAL
-
                     </span>
 
 
@@ -221,9 +290,7 @@
                         class="order-total-price"
                         id="orderTotal"
                     >
-
                         $5
-
                     </span>
 
 
@@ -231,9 +298,7 @@
                         class="order-total-detail"
                         id="orderTotalDetail"
                     >
-
                         1 ticket × $5
-
                     </span>
 
 
@@ -330,6 +395,41 @@
 
 
                 <!-- ================================================= -->
+                <!-- ♠ EVENT / LIGHTING WARNING                        -->
+                <!-- ================================================= -->
+
+                <div class="event-warning-box">
+
+
+                    <strong>
+                        EVENT NOTICE
+                    </strong>
+
+
+                    <p>
+
+                        Capacity is limited to 170 guests.
+
+                    </p>
+
+
+                    <p>
+
+                        This event may include flashing lights,
+                        strobe effects, and rapidly changing
+                        lighting.
+
+                        Guests with photosensitive epilepsy
+                        or similar sensitivities should use caution.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- ================================================= -->
                 <!-- ♠ NO REFUND POLICY                                 -->
                 <!-- ================================================= -->
 
@@ -365,9 +465,7 @@
                     class="request-ticket-button"
                     id="createCodeButton"
                 >
-
                     CREATE PAYMENT CODE
-
                 </button>
 
 
@@ -407,9 +505,7 @@
                     class="reference-code"
                     id="paymentReference"
                 >
-
                     FRED-PAY-XXXXXX
-
                 </p>
 
 
@@ -419,9 +515,7 @@
                     class="copy-reference-button"
                     id="copyReferenceButton"
                 >
-
                     COPY CODE
-
                 </button>
 
 
@@ -494,9 +588,7 @@
                     <p
                         id="paymentAmountMessage"
                     >
-
                         Now send your $5 payment:
-
                     </p>
 
 
@@ -507,9 +599,7 @@
                         class="payment-option"
                         id="selectedPaymentButton"
                     >
-
                         CONTINUE TO PAYMENT
-
                     </a>
 
 
@@ -584,6 +674,14 @@
             </p>
 
 
+            <p class="help-capacity-warning">
+
+                Ticket availability is limited
+                by the 170-person event capacity.
+
+            </p>
+
+
             <p class="help-refund-warning">
 
                 All ticket sales are final.
@@ -619,9 +717,10 @@
 
     <!-- ================================================= -->
     <!-- ♠ SCRIPT                                           -->
+    <!-- v=5 = live capacity system                       -->
     <!-- ================================================= -->
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
 
 
 </body>

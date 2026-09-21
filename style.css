@@ -795,11 +795,6 @@ button:hover,
 }
 
 
-
-/* ===================================================== */
-/* ♠ ARTIST IMAGE WRAPPER                                */
-/* ===================================================== */
-
 .artist-image-wrapper {
 
     width:
@@ -835,11 +830,6 @@ button:hover,
 }
 
 
-
-/* ===================================================== */
-/* ♠ DJ SPADE LOGO                                       */
-/* ===================================================== */
-
 .lineup-logo {
 
     width:
@@ -860,11 +850,6 @@ button:hover,
 }
 
 
-
-/* ===================================================== */
-/* ♠ IANSITO PHOTO                                       */
-/* ===================================================== */
-
 .lineup-artist-photo {
 
     width:
@@ -884,11 +869,6 @@ button:hover,
 
 }
 
-
-
-/* ===================================================== */
-/* ♠ COMING SOON                                         */
-/* ===================================================== */
 
 .coming-soon-box {
 
@@ -925,11 +905,6 @@ button:hover,
 }
 
 
-
-/* ===================================================== */
-/* ♠ LINEUP TEXT                                         */
-/* ===================================================== */
-
 .lineup-card h3 {
 
     font-size:
@@ -957,11 +932,6 @@ button:hover,
 
 }
 
-
-
-/* ===================================================== */
-/* ♠ LINEUP BADGES                                       */
-/* ===================================================== */
 
 .headliner,
 .opener-badge,
@@ -1632,6 +1602,214 @@ button:hover,
 
 
 /* ===================================================== */
+/* ♠ LIVE CAPACITY                                       */
+/* ===================================================== */
+
+.capacity-box {
+
+    margin:
+        25px auto 10px;
+
+    padding:
+        24px;
+
+    border:
+        1px solid #00d9ff;
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(
+            0,
+            217,
+            255,
+            0.055
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(
+            0,
+            217,
+            255,
+            0.08
+        );
+
+}
+
+
+.capacity-label {
+
+    color:
+        #888;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        3px;
+
+}
+
+
+.capacity-text {
+
+    margin-top:
+        8px;
+
+    color:
+        #00d9ff;
+
+    font-size:
+        1.25rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.capacity-count {
+
+    margin-top:
+        12px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        0.82rem;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+.capacity-count span {
+
+    color:
+        #00d9ff;
+
+    font-size:
+        1.3rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.capacity-limit {
+
+    margin-top:
+        10px;
+
+    color:
+        #888;
+
+    font-size:
+        0.8rem;
+
+}
+
+
+
+/* ===================================================== */
+/* ♠ SOLD OUT                                            */
+/* ===================================================== */
+
+.sold-out-box {
+
+    margin:
+        20px auto 10px;
+
+    padding:
+        24px;
+
+    border:
+        2px solid #ff2bd6;
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(
+            255,
+            43,
+            214,
+            0.08
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(
+            255,
+            43,
+            214,
+            0.15
+        );
+
+}
+
+
+.sold-out-box strong {
+
+    display:
+        block;
+
+    color:
+        #ff2bd6;
+
+    font-size:
+        1.4rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        4px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.sold-out-box p {
+
+    color:
+        #d8d8d8;
+
+    font-size:
+        0.95rem;
+
+    line-height:
+        1.6;
+
+}
+
+
+.sold-out-form {
+
+    opacity:
+        0.45;
+
+}
+
+
+
+/* ===================================================== */
 /* ♠ PAYMENT FORM                                        */
 /* ===================================================== */
 
@@ -1707,6 +1885,18 @@ button:hover,
 
     border-color:
         #ff2bd6;
+
+}
+
+
+.ticket-form input:disabled,
+.ticket-form select:disabled {
+
+    opacity:
+        0.55;
+
+    cursor:
+        not-allowed;
 
 }
 
@@ -1870,6 +2060,76 @@ button:hover,
 
 
 /* ===================================================== */
+/* ♠ EVENT WARNING                                       */
+/* ===================================================== */
+
+.event-warning-box {
+
+    margin-top:
+        18px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid #ff9d00;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(
+            255,
+            157,
+            0,
+            0.06
+        );
+
+    text-align:
+        center;
+
+}
+
+
+.event-warning-box strong {
+
+    display:
+        block;
+
+    color:
+        #ffb347;
+
+    font-size:
+        0.9rem;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.event-warning-box p {
+
+    color:
+        #d2d2d2;
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.55;
+
+    margin-top:
+        8px;
+
+}
+
+
+
+/* ===================================================== */
 /* ♠ NO REFUND POLICY                                    */
 /* ===================================================== */
 
@@ -1942,6 +2202,23 @@ button:hover,
 
     margin-top:
         20px;
+
+}
+
+
+.request-ticket-button:disabled {
+
+    border-color:
+        #666;
+
+    color:
+        #888;
+
+    cursor:
+        not-allowed;
+
+    box-shadow:
+        none;
 
 }
 
@@ -2220,7 +2497,7 @@ button:hover,
 }
 
 
-.help-refund-warning {
+.help-capacity-warning {
 
     margin-top:
         20px !important;
@@ -2230,6 +2507,23 @@ button:hover,
 
     border-top:
         1px solid #333;
+
+    color:
+        #00d9ff !important;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.help-refund-warning {
+
+    margin-top:
+        15px !important;
 
     color:
         #ff2bd6 !important;
@@ -2545,6 +2839,31 @@ button:hover,
     }
 
 
+    .capacity-box,
+    .sold-out-box {
+
+        padding:
+            18px 14px;
+
+    }
+
+
+    .capacity-text {
+
+        font-size:
+            1.05rem;
+
+    }
+
+
+    .capacity-count span {
+
+        font-size:
+            1.15rem;
+
+    }
+
+
     .order-total-box {
 
         padding:
@@ -2561,33 +2880,8 @@ button:hover,
     }
 
 
-    .multi-ticket-info {
-
-        padding:
-            16px 14px;
-
-    }
-
-
-    .multi-ticket-info strong {
-
-        font-size:
-            0.82rem;
-
-        letter-spacing:
-            1.5px;
-
-    }
-
-
-    .multi-ticket-info p {
-
-        font-size:
-            0.82rem;
-
-    }
-
-
+    .multi-ticket-info,
+    .event-warning-box,
     .refund-policy {
 
         padding:
@@ -2596,6 +2890,8 @@ button:hover,
     }
 
 
+    .multi-ticket-info strong,
+    .event-warning-box strong,
     .refund-policy strong {
 
         font-size:
@@ -2607,6 +2903,8 @@ button:hover,
     }
 
 
+    .multi-ticket-info p,
+    .event-warning-box p,
     .refund-policy p {
 
         font-size:
