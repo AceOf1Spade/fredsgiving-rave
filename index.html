@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 
 <!-- ===================================================== -->
-<!-- ♠ DJ SPADE                                           -->
-<!-- FREDSGIVING RAVE                                     -->
-<!-- Website by Gerardo Camacho                           -->
+<!--                                                       -->
+<!--                     ♠ DJ SPADE ♠                      -->
+<!--                                                       -->
+<!--                  FREDSGIVING RAVE                     -->
+<!--                                                       -->
+<!--              Courtland Entertainment                  -->
+<!--                                                       -->
+<!--              Website by Gerardo Camacho               -->
+<!--                                                       -->
 <!-- ===================================================== -->
 
 <html lang="en">
 
+
 <head>
 
     <meta charset="UTF-8">
+
 
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
+
     <meta
         name="author"
         content="Gerardo Camacho / DJ Spade"
     >
 
+
     <meta
         name="description"
-        content="Fredsgiving Rave presented by Courtland Entertainment at San Antonio College."
+        content="Fredsgiving Rave presented by Courtland Entertainment at San Antonio College. Free RSVP required."
     >
 
+
     <title>
-        Fredsgiving Rave | Courtland Entertainment
+        Fredsgiving Rave
     </title>
+
 
     <link
         rel="stylesheet"
-        href="style.css?v=6"
+        href="style.css?v=8"
     >
 
 </head>
+
 
 
 <body>
@@ -44,10 +57,10 @@
 
 
     <!-- ================================================= -->
-    <!-- ♠ NAVIGATION                                      -->
+    <!-- ♠ NAVBAR                                          -->
     <!-- ================================================= -->
 
-    <nav class="navbar">
+    <header class="navbar">
 
 
         <a
@@ -58,45 +71,48 @@
         </a>
 
 
-        <div class="nav-links">
+
+        <nav class="nav-links">
 
             <a href="#about">
                 ABOUT
-            </a>
-
-            <a href="#flyer">
-                FLYER
             </a>
 
             <a href="#lineup">
                 LINEUP
             </a>
 
+            <a href="#clubs">
+                CLUBS
+            </a>
+
             <a href="#media">
                 MEDIA
             </a>
 
-            <a href="#tickets">
-                TICKETS
+            <a href="#rsvp">
+                RSVP
             </a>
 
             <a href="#location">
                 LOCATION
             </a>
 
-        </div>
+        </nav>
+
 
 
         <button
             class="menu-button"
             id="menuButton"
-            aria-label="Open navigation menu"
+            type="button"
+            aria-label="Open menu"
         >
             ☰
         </button>
 
 
-    </nav>
+    </header>
 
 
 
@@ -113,10 +129,12 @@
         <button
             class="close-menu"
             id="closeMenu"
-            aria-label="Close navigation menu"
+            type="button"
+            aria-label="Close menu"
         >
             ✕
         </button>
+
 
 
         <div class="mobile-menu-links">
@@ -125,20 +143,20 @@
                 ABOUT
             </a>
 
-            <a href="#flyer">
-                FLYER
-            </a>
-
             <a href="#lineup">
                 LINEUP
+            </a>
+
+            <a href="#clubs">
+                CLUBS
             </a>
 
             <a href="#media">
                 MEDIA
             </a>
 
-            <a href="#tickets">
-                TICKETS
+            <a href="#rsvp">
+                RSVP
             </a>
 
             <a href="#location">
@@ -152,563 +170,1010 @@
 
 
 
-    <!-- ================================================= -->
-    <!-- ♠ HERO                                            -->
-    <!-- ================================================= -->
-
-    <header
-        class="hero"
-        id="home"
-    >
+    <main>
 
 
-        <p class="presented-by">
-            COURTLAND ENTERTAINMENT PRESENTS
-        </p>
 
+        <!-- ================================================= -->
+        <!-- ♠ HERO                                            -->
+        <!-- ================================================= -->
 
-        <h1>
-
-            FREDSGIVING<br>
-            RAVE
-
-        </h1>
-
-
-        <p class="event-info">
-            NOVEMBER 20
-        </p>
-
-
-        <p class="event-info">
-            6:30 PM - 9:30 PM
-        </p>
-
-
-        <p class="event-info">
-            FIESTA ROOM
-        </p>
-
-
-        <p class="event-info">
-            1819 N MAIN AVE
-        </p>
-
-
-        <p class="dj-credit">
-
-            MUSIC BY
-
-            <span>
-                DJ SPADE ♠
-            </span>
-
-        </p>
-
-
-        <img
-            src="images/spade-logo.png"
-            alt="DJ Spade logo"
-            class="spade-logo"
+        <section
+            class="hero"
+            id="home"
         >
 
 
-        <a
-            href="payment.html"
-            class="hero-button"
-        >
-            GET TICKETS
-        </a>
+            <p class="presented-by">
 
+                COURTLAND ENTERTAINMENT PRESENTS
 
-    </header>
+            </p>
 
 
 
-    <!-- ================================================= -->
-    <!-- ♠ ABOUT                                           -->
-    <!-- ================================================= -->
+            <h1>
 
-    <section
-        class="about"
-        id="about"
-    >
+                FREDSGIVING
+                <br>
+                RAVE
 
+            </h1>
 
-        <h2>
-            ABOUT THE EVENT
-        </h2>
 
 
-        <p>
+            <p class="event-info">
 
-            Courtland Entertainment presents Fredsgiving Rave,
-            a night of music, dancing, DJs, and live entertainment
-            at San Antonio College.
+                NOVEMBER 20
 
-        </p>
+            </p>
 
 
-        <p>
+            <p class="event-info">
 
-            Come experience electronic music,
-            high-energy DJ sets, and student creativity.
+                6:30 PM - 9:30 PM
 
-        </p>
+            </p>
 
 
-        <p>
+            <p class="event-info">
 
-            Join us for a night of music,
-            community, and entertainment.
+                FIESTA ROOM
 
-        </p>
+            </p>
 
 
-    </section>
+            <p class="event-info">
 
+                1819 N MAIN AVE
 
+            </p>
 
-    <!-- ================================================= -->
-    <!-- ♠ EVENT FLYER                                     -->
-    <!-- ================================================= -->
 
-    <section
-        class="flyer-section"
-        id="flyer"
-    >
 
+            <p class="free-event-badge">
 
-        <h2>
-            EVENT FLYER
-        </h2>
+                FREE EVENT • RSVP REQUIRED
 
+            </p>
 
-        <p class="flyer-text">
-            Fredsgiving Rave ♠
-        </p>
 
 
-        <img
-            src="images/fredsgiving-flyer.png"
-            alt="Fredsgiving Rave event flyer"
-            class="event-flyer"
-        >
+            <p class="dj-credit">
 
-
-    </section>
-
-
-
-    <!-- ================================================= -->
-    <!-- ♠ DJ LINEUP                                       -->
-    <!-- ================================================= -->
-
-    <section
-        class="lineup"
-        id="lineup"
-    >
-
-
-        <h2>
-            DJ LINEUP
-        </h2>
-
-
-        <div class="lineup-container">
-
-
-
-            <!-- ================================================= -->
-            <!-- ♠ IANSITO - OPENING DJ                            -->
-            <!-- ================================================= -->
-
-            <article class="lineup-card">
-
-
-                <div class="artist-image-wrapper">
-
-                    <img
-                        src="images/iansito.png"
-                        alt="Iansito"
-                        class="lineup-artist-photo"
-                    >
-
-                </div>
-
-
-                <h3>
-                    IANSITO
-                </h3>
-
-
-                <p>
-
-                    Opening DJ for Fredsgiving Rave,
-                    setting the energy for the night.
-
-                </p>
-
-
-                <span class="opener-badge">
-                    OPENING DJ
-                </span>
-
-
-            </article>
-
-
-
-            <!-- ================================================= -->
-            <!-- ♠ DJ SPADE - HEADLINER                            -->
-            <!-- ================================================= -->
-
-            <article class="lineup-card">
-
-
-                <div class="artist-image-wrapper">
-
-                    <img
-                        src="images/spade-logo.png"
-                        alt="DJ Spade"
-                        class="lineup-logo"
-                    >
-
-                </div>
-
-
-                <h3>
-                    DJ SPADE
-                </h3>
-
-
-                <p>
-
-                    High-energy electronic music,
-                    rave sounds, and the Fredsgiving
-                    headlining DJ set.
-
-                </p>
-
-
-                <span class="headliner">
-                    HEADLINER
-                </span>
-
-
-            </article>
-
-
-
-            <!-- ================================================= -->
-            <!-- ♠ MORE COMING SOON                               -->
-            <!-- ================================================= -->
-
-            <article class="lineup-card">
-
-
-                <div class="coming-soon-box">
-
-                    ?
-
-                </div>
-
-
-                <h3>
-                    COMING SOON
-                </h3>
-
-
-                <p>
-
-                    Another DJ will be announced soon.
-
-                </p>
-
-
-                <span class="upcoming">
-                    TBA
-                </span>
-
-
-            </article>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- ================================================= -->
-    <!-- ♠ MEDIA / SOCIALS                                 -->
-    <!-- ================================================= -->
-
-    <section
-        class="media"
-        id="media"
-    >
-
-
-        <h2>
-            FOLLOW THE EVENT
-        </h2>
-
-
-        <p class="media-intro">
-
-            Follow Courtland Entertainment and the
-            Fredsgiving DJs for event updates,
-            music, announcements, and future events.
-
-        </p>
-
-
-        <div class="social-container">
-
-
-
-            <!-- ================================================= -->
-            <!-- ♠ COURTLAND                                      -->
-            <!-- ================================================= -->
-
-            <article class="social-card">
-
-
-                <h3>
-                    COURTLAND ENTERTAINMENT
-                </h3>
-
-
-                <p>
-
-                    Follow Courtland Entertainment
-                    for Fredsgiving updates and
-                    future events.
-
-                </p>
-
-
-                <a
-                    href="https://www.instagram.com/wearecourtland?stkn=MXRhY2s3Ym1sZ3I2dA=="
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-button courtland-button"
-                >
-                    INSTAGRAM
-                </a>
-
-
-            </article>
-
-
-
-            <!-- ================================================= -->
-            <!-- ♠ DJ SPADE                                       -->
-            <!-- ================================================= -->
-
-            <article class="social-card">
-
-
-                <h3>
+                MUSIC BY
+                <span>
                     DJ SPADE ♠
-                </h3>
+                </span>
+
+            </p>
 
 
-                <p>
 
-                    Follow DJ Spade for mixes,
-                    performances, videos,
-                    and upcoming events.
+            <img
+                src="images/spade-logo.png"
+                alt="DJ Spade Logo"
+                class="spade-logo"
+            >
+
+
+
+            <a
+                href="#rsvp"
+                class="hero-button"
+            >
+
+                FREE RSVP
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- ♠ ABOUT                                           -->
+        <!-- ================================================= -->
+
+        <section
+            class="about"
+            id="about"
+        >
+
+
+            <h2>
+                ABOUT
+            </h2>
+
+
+
+            <p>
+
+                Fredsgiving Rave is a free student event
+                presented by Courtland Entertainment.
+
+                The night brings together music,
+                student organizations, community,
+                and live event experience in one space.
+
+            </p>
+
+
+
+            <p>
+
+                Expect electronic music,
+                lighting effects,
+                participating student organizations,
+                and a full rave-style atmosphere.
+
+            </p>
+
+
+
+            <p>
+
+                Admission is free,
+                but RSVP is required because
+                attendance is limited.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- ♠ LINEUP                                          -->
+        <!-- ================================================= -->
+
+        <section
+            class="lineup"
+            id="lineup"
+        >
+
+
+            <h2>
+                DJ LINEUP
+            </h2>
+
+
+
+            <div class="lineup-container">
+
+
+
+                <!-- ============================================= -->
+                <!-- IANSITO                                       -->
+                <!-- ============================================= -->
+
+                <article class="lineup-card">
+
+
+                    <div class="artist-image-wrapper">
+
+                        <img
+                            src="images/iansito.png"
+                            alt="Iansito"
+                            class="lineup-artist-photo"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        IANSITO
+                    </h3>
+
+
+                    <p>
+
+                        Opening DJ for Fredsgiving Rave,
+                        setting the energy for the night.
+
+                    </p>
+
+
+                    <span class="opener-badge">
+                        OPENING DJ
+                    </span>
+
+
+                </article>
+
+
+
+                <!-- ============================================= -->
+                <!-- DJ SPADE                                      -->
+                <!-- ============================================= -->
+
+                <article class="lineup-card">
+
+
+                    <div class="artist-image-wrapper">
+
+                        <img
+                            src="images/spade-logo.png"
+                            alt="DJ Spade"
+                            class="lineup-logo"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        DJ SPADE
+                    </h3>
+
+
+                    <p>
+
+                        Fredsgiving Rave headliner
+                        bringing a high-energy electronic
+                        and rave-focused set.
+
+                    </p>
+
+
+                    <span class="headliner">
+                        HEADLINER
+                    </span>
+
+
+                </article>
+
+
+
+                <!-- ============================================= -->
+                <!-- COMING SOON                                   -->
+                <!-- ============================================= -->
+
+                <article class="lineup-card">
+
+
+                    <div class="coming-soon-box">
+
+                        ?
+
+                    </div>
+
+
+                    <h3>
+                        COMING SOON
+                    </h3>
+
+
+                    <p>
+
+                        More lineup announcements
+                        are still on the way.
+
+                    </p>
+
+
+                    <span class="upcoming">
+                        TBA
+                    </span>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- ♠ PARTICIPATING CLUBS                              -->
+        <!-- ================================================= -->
+
+        <section
+            class="clubs"
+            id="clubs"
+        >
+
+
+            <h2>
+                PARTICIPATING CLUBS
+            </h2>
+
+
+
+            <p class="clubs-intro">
+
+                Fredsgiving is also a collaboration
+                with student organizations across campus.
+
+                Participating clubs can connect with students,
+                promote their organization,
+                and bring their own activities or fundraising ideas.
+
+            </p>
+
+
+
+            <div class="clubs-container">
+
+
+
+                <!-- ============================================= -->
+                <!-- AIAS                                          -->
+                <!-- ============================================= -->
+
+                <article class="club-card">
+
+
+                    <div class="club-logo-placeholder">
+
+                        AIAS
+
+                    </div>
+
+
+                    <h3>
+                        AIAS | SAC
+                    </h3>
+
+
+                    <p>
+
+                        American Institute of Architecture Students
+                        at San Antonio College.
+
+                        AIAS plans to participate with
+                        laser-cut keychains and other
+                        creative items.
+
+                    </p>
+
+
+                    <a
+                        href="https://www.instagram.com/sac_aias/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="club-social-button"
+                    >
+                        INSTAGRAM
+                    </a>
+
+
+                </article>
+
+
+
+                <!-- ============================================= -->
+                <!-- SGA                                           -->
+                <!-- ============================================= -->
+
+                <article class="club-card">
+
+
+                    <div class="club-logo-placeholder">
+
+                        SGA
+
+                    </div>
+
+
+                    <h3>
+                        STUDENT GOVERNMENT ASSOCIATION
+                    </h3>
+
+
+                    <p>
+
+                        San Antonio College Student Government
+                        Association will be joining the event
+                        and supporting the collaboration.
+
+                    </p>
+
+
+                    <a
+                        href="https://www.instagram.com/sac_sga_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="club-social-button"
+                    >
+                        INSTAGRAM
+                    </a>
+
+
+                </article>
+
+
+
+                <!-- ============================================= -->
+                <!-- MORE CLUBS                                    -->
+                <!-- ============================================= -->
+
+                <article class="club-card coming-club">
+
+
+                    <div class="club-logo-placeholder">
+
+                        +
+
+                    </div>
+
+
+                    <h3>
+                        MORE CLUBS COMING SOON
+                    </h3>
+
+
+                    <p>
+
+                        We are still connecting with
+                        more student organizations.
+
+                        More participating clubs
+                        will be announced soon.
+
+                    </p>
+
+
+                    <span class="club-coming-label">
+
+                        MORE TO COME
+
+                    </span>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- ♠ MEDIA / SOCIALS                                  -->
+        <!-- ================================================= -->
+
+        <section
+            class="media"
+            id="media"
+        >
+
+
+            <h2>
+                FOLLOW THE EVENT
+            </h2>
+
+
+
+            <p class="media-intro">
+
+                Follow Courtland Entertainment
+                and the Fredsgiving DJs for event updates,
+                music, announcements,
+                participating clubs,
+                and future events.
+
+            </p>
+
+
+
+            <div class="social-container">
+
+
+
+                <!-- COURTLAND -->
+
+                <article class="social-card">
+
+
+                    <h3>
+                        COURTLAND ENTERTAINMENT
+                    </h3>
+
+
+                    <p>
+
+                        Event announcements,
+                        club updates,
+                        collaborations,
+                        and future opportunities.
+
+                    </p>
+
+
+                    <a
+                        href="https://www.instagram.com/wearecourtland?stkn=MXRhY2s3Ym1sZ3I2dA=="
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-button courtland-button"
+                    >
+                        INSTAGRAM
+                    </a>
+
+
+                </article>
+
+
+
+                <!-- DJ SPADE -->
+
+                <article class="social-card">
+
+
+                    <h3>
+                        DJ SPADE
+                    </h3>
+
+
+                    <p>
+
+                        Sets,
+                        mixes,
+                        event content,
+                        and Fredsgiving updates.
+
+                    </p>
+
+
+                    <a
+                        href="https://www.instagram.com/ace_of.1spade?stkn=eXF0d2hoOGgwamYz&utm_source=qr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-button instagram-button"
+                    >
+                        INSTAGRAM
+                    </a>
+
+
+                    <a
+                        href="https://youtube.com/@djofspades?si=QQPba7ZHOtJlr2IQ"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-button youtube-button"
+                    >
+                        YOUTUBE
+                    </a>
+
+
+                </article>
+
+
+
+                <!-- IANSITO -->
+
+                <article class="social-card">
+
+
+                    <h3>
+                        IANSITO
+                    </h3>
+
+
+                    <p>
+
+                        Follow Fredsgiving's opening DJ
+                        for music and updates.
+
+                    </p>
+
+
+                    <a
+                        href="https://www.instagram.com/ianrbe?stkn=MWNwcmdpM3F1N2FnZw=="
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-button iansito-button"
+                    >
+                        INSTAGRAM
+                    </a>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- ♠ RSVP                                            -->
+        <!-- ================================================= -->
+
+        <section
+            class="rsvp-section"
+            id="rsvp"
+        >
+
+
+            <h2>
+                FREE RSVP
+            </h2>
+
+
+
+            <p class="rsvp-intro">
+
+                Fredsgiving Rave is free,
+                but space is limited.
+
+                Reserve your spot below
+                and your QR ticket will be
+                sent directly to your email.
+
+            </p>
+
+
+
+            <!-- ============================================= -->
+            <!-- AVAILABILITY                                  -->
+            <!-- ============================================= -->
+
+            <div class="rsvp-capacity-box">
+
+
+                <p class="capacity-label">
+
+                    LIVE AVAILABILITY
 
                 </p>
 
 
-                <a
-                    href="https://www.instagram.com/ace_of.1spade?stkn=eXF0d2hoOGgwamYz&utm_source=qr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-button instagram-button"
+                <p
+                    class="availability-status"
+                    id="rsvpAvailability"
                 >
-                    INSTAGRAM
-                </a>
+
+                    CHECKING AVAILABILITY
+
+                </p>
 
 
-                <a
-                    href="https://youtube.com/@djofspades?si=QQPba7ZHOtJlr2IQ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-button youtube-button"
+                <p
+                    class="capacity-text"
+                    id="capacityText"
                 >
-                    YOUTUBE
-                </a>
+
+                    Checking remaining spots...
+
+                </p>
 
 
-            </article>
+                <p class="capacity-count">
+
+                    <span
+                        id="capacityRemaining"
+                    >
+                        --
+                    </span>
+
+                    / 170 SPOTS REMAINING
+
+                </p>
 
 
 
-            <!-- ================================================= -->
-            <!-- ♠ IANSITO                                        -->
-            <!-- ================================================= -->
+                <div class="capacity-progress-track">
 
-            <article class="social-card">
+                    <div
+                        class="capacity-progress"
+                        id="capacityProgress"
+                    ></div>
+
+                </div>
+
+
+
+                <p class="capacity-limit">
+
+                    Maximum attendance:
+                    170 guests
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- ============================================= -->
+            <!-- SOLD OUT BOX                                  -->
+            <!-- ============================================= -->
+
+            <div
+                class="sold-out-box hidden"
+                id="soldOutBox"
+            >
+
+
+                <strong>
+                    SOLD OUT
+                </strong>
+
+
+                <p>
+
+                    Fredsgiving Rave has reached
+                    the 170-person RSVP limit.
+
+                    New RSVPs are currently closed.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- ============================================= -->
+            <!-- RSVP FORM                                     -->
+            <!-- ============================================= -->
+
+            <form
+                class="rsvp-form"
+                id="rsvpForm"
+            >
+
+
+                <label for="rsvpName">
+
+                    FULL NAME
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="rsvpName"
+                    name="name"
+                    placeholder="Your full name"
+                    autocomplete="name"
+                    required
+                >
+
+
+
+                <label for="rsvpEmail">
+
+                    EMAIL
+
+                </label>
+
+
+                <input
+                    type="email"
+                    id="rsvpEmail"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+
+
+                <!-- ========================================= -->
+                <!-- EVENT WARNING                             -->
+                <!-- ========================================= -->
+
+                <div class="event-warning-box">
+
+
+                    <strong>
+                        ⚠ EVENT NOTICE
+                    </strong>
+
+
+                    <p>
+
+                        This event may include
+                        flashing lights,
+                        strobe effects,
+                        lasers,
+                        and rapidly changing lighting.
+
+                    </p>
+
+
+                    <p>
+
+                        Guests with photosensitive epilepsy
+                        or similar sensitivities
+                        should use caution.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- ========================================= -->
+                <!-- RSVP RULES                                -->
+                <!-- ========================================= -->
+
+                <div class="rsvp-policy-box">
+
+
+                    <strong>
+                        RSVP INFORMATION
+                    </strong>
+
+
+                    <p>
+
+                        One RSVP admits one guest.
+
+                    </p>
+
+
+                    <p>
+
+                        Each QR ticket can only be
+                        checked in once.
+
+                    </p>
+
+
+                    <p>
+
+                        RSVP availability is limited
+                        to the 170-person event capacity.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="rsvp-button"
+                    id="rsvpButton"
+                >
+
+                    RESERVE MY SPOT
+
+                </button>
+
+
+            </form>
+
+
+
+            <p
+                class="rsvp-message"
+                id="rsvpMessage"
+            ></p>
+
+
+
+            <!-- ============================================= -->
+            <!-- RSVP SUCCESS                                  -->
+            <!-- ============================================= -->
+
+            <div
+                class="rsvp-success hidden"
+                id="rsvpSuccess"
+            >
+
+
+                <div class="rsvp-success-icon">
+
+                    ✓
+
+                </div>
 
 
                 <h3>
-                    IANSITO
+
+                    RSVP CONFIRMED
+
                 </h3>
 
 
                 <p>
 
-                    Follow Iansito for music,
-                    DJ content, performances,
-                    and upcoming sets.
+                    You're in,
+                    <strong
+                        id="successName"
+                    >
+                        guest
+                    </strong>.
 
                 </p>
 
 
-                <a
-                    href="https://www.instagram.com/ianrbe?stkn=MWNwcmdpM3F1N2FnZw=="
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-button iansito-button"
-                >
-                    INSTAGRAM
-                </a>
+                <p>
+
+                    Your Fredsgiving Rave QR ticket
+                    has been sent to your email.
+
+                </p>
 
 
-            </article>
+                <p class="rsvp-success-reminder">
 
+                    Keep the email and bring your QR code
+                    to the entrance on November 20.
 
-        </div>
+                </p>
 
-
-    </section>
-
-
-
-    <!-- ================================================= -->
-    <!-- ♠ TICKETS                                         -->
-    <!-- ================================================= -->
-
-    <section
-        class="tickets-simple"
-        id="tickets"
-    >
-
-
-        <h2>
-            TICKETS
-        </h2>
-
-
-        <div class="ticket-summary">
-
-
-            <div>
-
-                <span class="summary-label">
-                    PRESALE
-                </span>
-
-                <span class="summary-price">
-                    $5
-                </span>
 
             </div>
 
 
-            <div>
-
-                <span class="summary-label">
-                    AT THE DOOR
-                </span>
-
-                <span class="summary-price">
-                    $8
-                </span>
-
-            </div>
+        </section>
 
 
-        </div>
 
+        <!-- ================================================= -->
+        <!-- ♠ LOCATION                                        -->
+        <!-- ================================================= -->
 
-        <p class="ticket-summary-note">
-
-            Presale tickets include a unique
-            QR code that will be emailed after
-            payment verification.
-
-        </p>
-
-
-        <p class="ticket-refund-note">
-
-            ALL TICKET SALES ARE FINAL.
-            NO REFUNDS.
-
-        </p>
-
-
-        <a
-            href="payment.html"
-            class="hero-button"
+        <section
+            class="location"
+            id="location"
         >
-            BUY PRESALE TICKET
-        </a>
 
 
-    </section>
+            <h2>
+                LOCATION
+            </h2>
 
 
 
-    <!-- ================================================= -->
-    <!-- ♠ LOCATION                                        -->
-    <!-- ================================================= -->
+            <p class="location-name">
 
-    <section
-        class="location"
-        id="location"
-    >
+                FIESTA ROOM
+
+            </p>
 
 
-        <h2>
-            LOCATION
-        </h2>
+
+            <p class="location-address">
+
+                1819 N Main Ave
+                <br>
+                San Antonio, TX
+
+            </p>
 
 
-        <p class="location-name">
-            FIESTA ROOM
-        </p>
+
+            <p class="location-note">
+
+                November 20
+                <br>
+                6:30 PM - 9:30 PM
+
+            </p>
 
 
-        <p class="location-address">
 
-            1819 N Main Ave
+            <a
+                href="https://maps.google.com/?q=1819+N+Main+Ave+San+Antonio+TX"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hero-button location-button"
+            >
 
-            <br>
+                OPEN IN MAPS
 
-            San Antonio, TX
-
-        </p>
-
-
-        <p class="location-note">
-
-            November 20
-
-            <br>
-
-            6:30 PM - 9:30 PM
-
-        </p>
+            </a>
 
 
-    </section>
+        </section>
+
+
+    </main>
 
 
 
@@ -720,17 +1185,25 @@
 
 
         <p>
-            Fredsgiving Rave • Courtland Entertainment
+
+            Fredsgiving Rave
+            ♠
+            Courtland Entertainment
+
         </p>
 
 
         <p>
-            Music by DJ Spade ♠
+
+            Music by DJ Spade
+
         </p>
 
 
         <p>
+
             Website by Gerardo Camacho
+
         </p>
 
 
@@ -739,10 +1212,10 @@
 
 
     <!-- ================================================= -->
-    <!-- ♠ JAVASCRIPT                                      -->
+    <!-- ♠ SCRIPT                                           -->
     <!-- ================================================= -->
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=6"></script>
 
 
 </body>
